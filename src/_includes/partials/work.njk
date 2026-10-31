@@ -1,25 +1,27 @@
+{% set w = t.work %}
 <section id="work" class="container section work">
   <div class="work__head">
     <div>
       <div class="eyebrow">
         <span class="eyebrow__line"></span>
-        <span class="label-tech">{{ work.label }}</span>
+        <span class="label-tech">{{ w.label }}</span>
       </div>
-      <h2 class="h2 h2--xl">{{ work.headline | lines }}</h2>
+      <h2 class="h2 h2--xl">{{ w.headline | lines }}</h2>
     </div>
-    <div class="chips" role="group" aria-label="{{ work.label }}" data-filters>
-      <button type="button" class="chip chip--filter" data-filter="all" aria-pressed="true">{{ work.allLabel }}</button>
-      {% for category in work.categories %}
-      <button type="button" class="chip chip--filter" data-filter="{{ category.name | categorySlug }}" aria-pressed="false">{{ category.name }}</button>
+    <div class="chips" role="group" aria-label="{{ w.label }}" data-filters>
+      <button type="button" class="chip chip--filter" data-filter="all" aria-pressed="true">{{ w.allLabel }}</button>
+      {% for category in w.categories %}
+      <button type="button" class="chip chip--filter" data-filter="{{ category.id | categorySlug }}" aria-pressed="false">{{ category.name | tr(lang) }}</button>
       {% endfor %}
     </div>
   </div>
   <div class="work__grid" data-grid>
-    {% for project in work.projects %}{% if project.gallery and project.gallery.length %}
+    {% for project in w.projects %}{% if project.gallery and project.gallery.length %}
     {% set cover = project.gallery[0] %}
-    <article class="card" data-category="{{ project.category | categorySlug }}" data-gallery="{{ project.gallery | galleryData }}" data-title="{{ project.title }}{% if project.subtitle %} — {{ project.subtitle }}{% endif %}">
+    {% set subtitle = project.subtitle | tr(lang) %}
+    <article class="card" data-category="{{ project.category | categorySlug }}" data-gallery="{{ project.gallery | galleryData(lang) }}" data-title="{{ project.title }}{% if subtitle %} — {{ subtitle }}{% endif %}">
       <div class="card__media">
-        {{ cover.image | picture(cover.alt or project.title, "(min-width: 1024px) 440px, (min-width: 640px) 50vw, 100vw", { class: "card__img" }) }}
+        {{ cover.image | picture((cover.alt | tr(lang)) or project.title, "(min-width: 1024px) 440px, (min-width: 640px) 50vw, 100vw", { class: "card__img" }) }}
         <div class="card__grid" aria-hidden="true"></div>
         {% if project.year %}<span class="card__year">{{ project.year }}</span>{% endif %}
         {% if project.gallery.length > 1 %}<span class="card__count" aria-hidden="true">1 / {{ project.gallery.length }}</span>{% endif %}
@@ -27,15 +29,16 @@
       <div class="card__body">
         <div>
           <h3 class="card__title">{{ project.title }}</h3>
-          <p class="card__subtitle">{{ project.subtitle }}</p>
+          <p class="card__subtitle">{{ subtitle }}</p>
         </div>
         <span class="card__dot" aria-hidden="true"></span>
       </div>
-      {% if project.details %}
-      <div class="card__details"><p>{{ project.details }}</p></div>
+      {% set details = project.details | tr(lang) %}
+      {% if details %}
+      <div class="card__details"><p>{{ details }}</p></div>
       {% endif %}
       <button type="button" class="card__hit" aria-haspopup="dialog"
-        aria-label="{{ work.openGalleryLabel }}: {{ project.title }} ({{ project.gallery.length }})"></button>
+        aria-label="{{ w.openGalleryLabel }}: {{ project.title }} ({{ project.gallery.length }})"></button>
     </article>
     {% endif %}{% endfor %}
   </div>

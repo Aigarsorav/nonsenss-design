@@ -59,6 +59,7 @@ async function processContentImages() {
 
 function getMeta(src) {
   const meta = imageMeta.get(src);
+  if (!meta) console.error("[images] no processed image for", JSON.stringify(src), "known:", [...imageMeta.keys()]);
   if (!meta) throw new Error(`[images] No processed image for "${src}". Is the path correct?`);
   return meta;
 }
@@ -105,6 +106,11 @@ export default function (eleventyConfig) {
       .replace(/&/g, " and ")
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "")
+  );
+
+  // Per-language value from `{ en, et, ru }` objects (shared lists keep translations inline); plain strings pass through.
+  eleventyConfig.addFilter("tr", (value, lang) =>
+    value && typeof value === "object" ? value[lang] || value.en || "" : value
   );
 
   eleventyConfig.addFilter("pad2", (n) => String(n).padStart(2, "0"));

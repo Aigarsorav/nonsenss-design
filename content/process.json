@@ -1,11 +1,35 @@
 {
-  "label": "How it runs",
-  "headline": "From brief\nto gate",
-  "intro": "Most graphic kits leave the workshop inside five working days. Wraps are booked into the bay once the proof is signed off.",
-  "steps": [
-    { "title": "Brief", "text": "Send photos of the bike or vehicle and the details of what you're racing or running. We reply with questions and a fixed price." },
-    { "title": "Design", "text": "You get a rendered proof on your own bike. Two rounds of changes are included before anything goes to print." },
-    { "title": "Print", "text": "Latex printed at 1440 dpi on cast vinyl, laminated for fuel and pressure-washer resistance, then contour cut." },
-    { "title": "Apply", "text": "Drop the machine off and we fit it in the bay, or take the kit away with a fitting guide and a squeegee." }
-  ]
+  "en": {
+    "label": "How it runs",
+    "headline": "From brief\nto gate",
+    "intro": "Most graphic kits leave the workshop inside five working days. Wraps are booked into the bay once the proof is signed off.",
+    "steps": [
+      { "title": "Brief", "text": "Send photos of the bike or vehicle and the details of what you're racing or running. We reply with questions and a fixed price." },
+      { "title": "Design", "text": "You get a rendered proof on your own bike. Two rounds of changes are included before anything goes to print." },
+      { "title": "Print", "text": "Latex printed at 1440 dpi on cast vinyl, laminated for fuel and pressure-washer resistance, then contour cut." },
+      { "title": "Apply", "text": "Drop the machine off and we fit it in the bay, or take the kit away with a fitting guide and a squeegee." }
+    ]
+  },
+  "et": {
+    "label": "Kuidas see käib",
+    "headline": "Briifist\nstardini",
+    "intro": "Enamik graafikakomplekte lahkub töökojast viie tööpäeva jooksul. Kiletamised broneeritakse boksi kohe, kui kavand on kinnitatud.",
+    "steps": [
+      { "title": "Briif", "text": "Saada fotod rattast või sõidukist ja kirjelda, millega võistled või sõidad. Vastame küsimuste ja kindla hinnaga." },
+      { "title": "Kujundus", "text": "Saad renderdatud kavandi oma ratta peal. Kaks parandusringi on hinnas, enne kui midagi trükki läheb." },
+      { "title": "Trükk", "text": "Lateksiga trükitud 1440 dpi valatud vinüülile, lamineeritud kütuse- ja survepesukindlaks, seejärel kontuurlõige." },
+      { "title": "Paigaldus", "text": "Too masin meile ja paigaldame boksis, või võta komplekt kaasa koos paigaldusjuhendi ja kaabitsaga." }
+    ]
+  },
+  "ru": {
+    "label": "Как это работает",
+    "headline": "От брифа\nдо старта",
+    "intro": "Большинство комплектов графики уходит из мастерской за пять рабочих дней. Оклейка ставится в бокс, как только утверждён макет.",
+    "steps": [
+      { "title": "Бриф", "text": "Пришлите фото мотоцикла или авто и расскажите, где гоняете или ездите. Мы ответим вопросами и фиксированной ценой." },
+      { "title": "Дизайн", "text": "Вы получаете рендер макета на своём мотоцикле. Два круга правок включены, прежде чем что-либо уйдёт в печать." },
+      { "title": "Печать", "text": "Латексная печать 1440 dpi на литом виниле, ламинация для стойкости к топливу и мойке под давлением, затем контурная резка." },
+      { "title": "Установка", "text": "Оставьте технику у нас — установим в боксе, или заберите комплект с инструкцией и ракелем." }
+    ]
+  }
 }

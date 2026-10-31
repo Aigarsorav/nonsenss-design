@@ -13,6 +13,10 @@ backend:
     uploadMedia: "media: add {{path}}"
     deleteMedia: "media: remove {{path}}"
 
+# Local editing without GitHub: run `npx decap-server` next to `npm run dev`.
+# Only honoured when the CMS is opened on localhost; ignored on the live site.
+local_backend: true
+
 # Photos uploaded through the editor are stored here. The build generates
 # compressed, resized WebP/JPEG versions automatically — upload the best quality you have.
 media_folder: images/uploads
@@ -22,66 +26,82 @@ site_url: /
 display_url: /
 logo_url: /assets/favicon.svg
 
+# Three languages, edited side by side. Each content file holds all three:
+# { "en": {...}, "et": {...}, "ru": {...} }. Nothing is translated automatically.
+i18n:
+  structure: single_file
+  locales: [en, et, ru]
+  default_locale: en
+
 collections:
   - name: site
     label: Site content
-    description: "Every text and image on the page. Click a section to edit it. Changes go live a minute or two after you press Publish."
+    i18n: true
+    description: "Every text and image on the page, in English, Estonian and Russian. Click a section, then use the language toggle at the top of the editor to show the other languages next to English. Changes go live a minute or two after you press Publish."
     files:
 
       # ------------------------------------------------------------ Settings
       - name: settings
         label: "Site settings (SEO)"
         file: content/settings.json
+        i18n: true
         fields:
-          - { label: "Browser tab / search title", name: siteTitle, widget: string, hint: "Shown in the browser tab and as the headline in Google results." }
-          - { label: "Search description", name: siteDescription, widget: text, hint: "One or two sentences shown under the title in Google and when the link is shared." }
-          - { label: "Site address", name: siteUrl, widget: string, hint: "The full public address, e.g. https://apexline.ee — no trailing slash." }
-          - { label: "Share image", name: shareImage, widget: image, required: false, hint: "Picture shown when the link is shared on social media or in chats. Landscape, about 1200×630." }
-          - { label: "Language code", name: language, widget: string, default: en, hint: "Two-letter code of the page language, e.g. en or et." }
+          - { label: "Browser tab / search title", name: siteTitle, widget: string, i18n: true, hint: "Shown in the browser tab and as the headline in Google results." }
+          - { label: "Search description", name: siteDescription, widget: text, i18n: true, hint: "One or two sentences shown under the title in Google and when the link is shared." }
+          - { label: "Site address", name: siteUrl, widget: string, i18n: duplicate, hint: "The full public address, e.g. https://apexline.ee — no trailing slash. Same for every language." }
+          - { label: "Share image", name: shareImage, widget: image, required: false, i18n: duplicate, hint: "Picture shown when the link is shared on social media or in chats. Landscape, about 1200×630." }
 
       # ------------------------------------------------------------ Header
       - name: header
         label: "Header & menu"
         file: content/header.json
+        i18n: true
         fields:
-          - { label: "Logo text", name: logoText, widget: string, hint: "The big word in the top-left corner." }
-          - { label: "Logo small text", name: logoSubtext, widget: string, required: false, hint: "Small word next to the logo (hidden on phones)." }
+          - { label: "Logo text", name: logoText, widget: string, i18n: true, hint: "The big word in the top-left corner." }
+          - { label: "Logo small text", name: logoSubtext, widget: string, required: false, i18n: true, hint: "Small word next to the logo (hidden on phones)." }
           - label: "Menu labels"
             name: nav
             widget: object
+            i18n: true
             hint: "The menu always links to the same four sections — only the words change."
             fields:
-              - { label: "Work", name: work, widget: string }
-              - { label: "Services", name: services, widget: string }
-              - { label: "Process", name: process, widget: string }
-              - { label: "Studio", name: studio, widget: string }
-          - { label: "Yellow button text", name: buttonText, widget: string, hint: "The button in the menu that jumps to the quote form." }
-          - { label: "Open-menu label (screen readers)", name: openMenuLabel, widget: string, default: "Open menu" }
-          - { label: "Close-menu label (screen readers)", name: closeMenuLabel, widget: string, default: "Close menu" }
+              - { label: "Work", name: work, widget: string, i18n: true }
+              - { label: "Services", name: services, widget: string, i18n: true }
+              - { label: "Process", name: process, widget: string, i18n: true }
+              - { label: "Studio", name: studio, widget: string, i18n: true }
+          - { label: "Yellow button text", name: buttonText, widget: string, i18n: true, hint: "The button in the menu that jumps to the quote form." }
+          - { label: "Open-menu label (screen readers)", name: openMenuLabel, widget: string, i18n: true }
+          - { label: "Close-menu label (screen readers)", name: closeMenuLabel, widget: string, i18n: true }
+          - { label: "Menu name (screen readers)", name: mainNavLabel, widget: string, i18n: true }
+          - { label: "Language switcher name (screen readers)", name: languageLabel, widget: string, i18n: true }
+          - { label: "'Skip to content' link (keyboard users)", name: skipLink, widget: string, i18n: true }
 
       # ------------------------------------------------------------ Hero
       - name: hero
         label: "Hero (top of page)"
         file: content/hero.json
+        i18n: true
         fields:
-          - { label: "Small line above the headline", name: eyebrow, widget: string, hint: "e.g. Tallinn, Estonia · wrap & graphics studio" }
-          - { label: "Headline (white part)", name: headline, widget: text, hint: "Press Enter to force a line break. The yellow part is added after this." }
-          - { label: "Headline (yellow part)", name: headlineHighlight, widget: string, hint: "Shown in lime yellow right after the white part." }
-          - { label: "Intro paragraph", name: intro, widget: text }
-          - { label: "Yellow button text", name: primaryButton, widget: string, hint: "Jumps to the quote form." }
-          - { label: "Outlined button text", name: secondaryButton, widget: string, hint: "Jumps to the work section." }
-          - { label: "Background photo", name: backgroundImage, widget: image, hint: "Wide landscape photo, at least 2000 px wide. It is darkened automatically so text stays readable." }
-          - { label: "Background photo description", name: backgroundAlt, widget: string, hint: "Describe the photo in a few words for screen readers and search engines." }
+          - { label: "Small line above the headline", name: eyebrow, widget: string, i18n: true, hint: "e.g. Tallinn, Estonia · wrap & graphics studio" }
+          - { label: "Headline (white part)", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break. The yellow part is added after this. Keep single words short — on phones the headline is very large." }
+          - { label: "Headline (yellow part)", name: headlineHighlight, widget: string, i18n: true, hint: "Shown in lime yellow right after the white part." }
+          - { label: "Intro paragraph", name: intro, widget: text, i18n: true }
+          - { label: "Yellow button text", name: primaryButton, widget: string, i18n: true, hint: "Jumps to the quote form." }
+          - { label: "Outlined button text", name: secondaryButton, widget: string, i18n: true, hint: "Jumps to the work section." }
+          - { label: "Background photo", name: backgroundImage, widget: image, i18n: duplicate, hint: "Same photo for every language. Wide landscape, at least 2000 px wide; it is darkened automatically." }
+          - { label: "Background photo description", name: backgroundAlt, widget: string, i18n: true, hint: "Describe the photo in a few words for screen readers and search engines." }
 
       # ------------------------------------------------------------ Specs
       - name: specs
         label: "Spec strip (under the hero)"
         file: content/specs.json
+        i18n: true
         fields:
           - label: "Items"
             name: items
             widget: list
-            hint: "Four items fit best on desktop. Drag the handle to reorder."
+            i18n: true
+            hint: "Four items fit best on desktop. Each language has its own list — keep them in the same order."
             summary: "{{fields.label}}: {{fields.value}}"
             fields:
               - { label: "Small label", name: label, widget: string, hint: "e.g. Material" }
@@ -91,74 +111,107 @@ collections:
       - name: marquee
         label: "Scrolling keyword strip"
         file: content/marquee.json
+        i18n: true
         fields:
           - label: "Keywords"
             name: keywords
             widget: list
+            i18n: true
             field: { label: "Keyword", name: keyword, widget: string }
-            hint: "Short phrases that scroll continuously across the strip. Add, remove or drag to reorder."
+            hint: "Short phrases that scroll continuously across the strip. Each language has its own list."
 
       # ------------------------------------------------------------ Work
       - name: work
         label: "Work (projects)"
         file: content/work.json
+        i18n: true
         fields:
-          - { label: "Small label", name: label, widget: string, hint: "e.g. Selected work" }
-          - { label: "Headline", name: headline, widget: text, hint: "Press Enter to force a line break." }
-          - { label: "'Show everything' filter text", name: allLabel, widget: string, default: "All work", hint: "This filter is always first and shows every project." }
+          - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. Selected work" }
+          - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
+          - { label: "'Show everything' filter text", name: allLabel, widget: string, i18n: true, hint: "This filter is always first and shows every project." }
           - label: "Filter categories"
             name: categories
             widget: list
-            hint: "The filter buttons above the project grid. Add, rename, remove or reorder. Every project below must be assigned one of these — if you rename a category, re-select it on its projects."
-            summary: "{{fields.name}}"
+            hint: "The filter buttons above the project grid — one shared list, with the name in each language. Add, remove or drag to reorder. Every project picks one of these by its ID. (Edited in the English column only.)"
+            summary: "{{fields.name.en}} ({{fields.id}})"
             fields:
-              - { label: "Category name", name: name, widget: string }
+              - { label: "ID", name: id, widget: string, pattern: ["^[a-z0-9-]+$", "Lowercase letters, numbers and dashes only"], hint: "Short technical name, same in every language, e.g. wraps. Projects refer to this — don't change it once projects use it." }
+              - label: "Name"
+                name: name
+                widget: object
+                fields:
+                  - { label: "English", name: en, widget: string }
+                  - { label: "Estonian", name: et, widget: string }
+                  - { label: "Russian", name: ru, widget: string }
           - label: "Projects"
             name: projects
             widget: list
-            hint: "Drag the handle to change the order on the page. The first gallery photo is the card cover."
-            summary: "{{fields.title}} — {{fields.subtitle}} ({{fields.year}})"
+            hint: "One shared list for all languages — photos are the same everywhere, only the texts differ. Drag the handle to change the order on the page. The first gallery photo is the card cover. (Edited in the English column only.)"
+            summary: "{{fields.title}} ({{fields.year}})"
             fields:
-              - { label: "Title", name: title, widget: string, hint: "e.g. Gate Drop" }
-              - { label: "Subtitle", name: subtitle, widget: string, required: false, hint: "Bike, vehicle or client, e.g. KTM 250 SX-F" }
+              - { label: "Title", name: title, widget: string, hint: "Project name, shown as-is in every language, e.g. Gate Drop" }
+              - label: "Subtitle"
+                name: subtitle
+                widget: object
+                hint: "Bike, vehicle or client, e.g. KTM 250 SX-F"
+                fields:
+                  - { label: "English", name: en, widget: string, required: false }
+                  - { label: "Estonian", name: et, widget: string, required: false }
+                  - { label: "Russian", name: ru, widget: string, required: false }
               - { label: "Year", name: year, widget: string, required: false, hint: "Shown as a small tag on the photo." }
               - label: "Category"
                 name: category
                 widget: relation
                 collection: site
                 file: work
-                search_fields: ["categories.*.name"]
-                value_field: "categories.*.name"
-                display_fields: ["categories.*.name"]
+                search_fields: ["categories.*.name.en", "categories.*.id"]
+                value_field: "categories.*.id"
+                display_fields: ["categories.*.name.en"]
                 hint: "Pick one of the filter categories from the list above."
-              - { label: "Details line", name: details, widget: string, required: false, hint: "Short spec line revealed on hover, e.g. Full plastics wrap · matte laminate" }
+              - label: "Details line"
+                name: details
+                widget: object
+                hint: "Short spec line revealed on hover, e.g. Full plastics wrap · matte laminate"
+                fields:
+                  - { label: "English", name: en, widget: string, required: false }
+                  - { label: "Estonian", name: et, widget: string, required: false }
+                  - { label: "Russian", name: ru, widget: string, required: false }
               - label: "Gallery"
                 name: gallery
                 widget: list
                 min: 1
                 hint: "One or more photos. The first one is the card cover; visitors can click through the rest in a fullscreen viewer. Drag to reorder."
-                summary: "{{fields.alt}}"
+                summary: "{{fields.alt.en}}"
                 fields:
                   - { label: "Photo", name: image, widget: image, hint: "Landscape 4:3 works best for the cover. Any size — it is compressed at build time." }
-                  - { label: "Photo description", name: alt, widget: string, required: false, hint: "A few words describing the photo, for screen readers and search engines." }
-          - { label: "Gallery viewer name (screen readers)", name: galleryLabel, widget: string, default: "Project gallery" }
-          - { label: "'Open gallery' label (screen readers)", name: openGalleryLabel, widget: string, default: "Open gallery" }
-          - { label: "'Previous image' label (screen readers)", name: previousLabel, widget: string, default: "Previous image" }
-          - { label: "'Next image' label (screen readers)", name: nextLabel, widget: string, default: "Next image" }
-          - { label: "'Close gallery' label (screen readers)", name: closeLabel, widget: string, default: "Close gallery" }
+                  - label: "Photo description"
+                    name: alt
+                    widget: object
+                    hint: "A few words describing the photo, for screen readers and search engines."
+                    fields:
+                      - { label: "English", name: en, widget: string, required: false }
+                      - { label: "Estonian", name: et, widget: string, required: false }
+                      - { label: "Russian", name: ru, widget: string, required: false }
+          - { label: "Gallery viewer name (screen readers)", name: galleryLabel, widget: string, i18n: true }
+          - { label: "'Open gallery' label (screen readers)", name: openGalleryLabel, widget: string, i18n: true }
+          - { label: "'Previous image' label (screen readers)", name: previousLabel, widget: string, i18n: true }
+          - { label: "'Next image' label (screen readers)", name: nextLabel, widget: string, i18n: true }
+          - { label: "'Close gallery' label (screen readers)", name: closeLabel, widget: string, i18n: true }
 
       # ------------------------------------------------------------ Services
       - name: services
         label: "Services"
         file: content/services.json
+        i18n: true
         fields:
-          - { label: "Small label", name: label, widget: string, hint: "e.g. What we do" }
-          - { label: "Headline", name: headline, widget: text, hint: "Press Enter to force a line break." }
-          - { label: "Text", name: text, widget: text }
+          - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. What we do" }
+          - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
+          - { label: "Text", name: text, widget: text, i18n: true }
           - label: "Services"
             name: services
             widget: list
-            hint: "Numbering (01, 02, …) is added automatically. Drag to reorder."
+            i18n: true
+            hint: "Numbering (01, 02, …) is added automatically. Each language has its own list — keep them in the same order."
             summary: "{{fields.title}}"
             fields:
               - { label: "Title", name: title, widget: string }
@@ -174,14 +227,16 @@ collections:
       - name: process
         label: "Process"
         file: content/process.json
+        i18n: true
         fields:
-          - { label: "Small label", name: label, widget: string, hint: "e.g. How it runs" }
-          - { label: "Headline", name: headline, widget: text, hint: "Press Enter to force a line break." }
-          - { label: "Intro", name: intro, widget: text }
+          - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. How it runs" }
+          - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
+          - { label: "Intro", name: intro, widget: text, i18n: true }
           - label: "Steps"
             name: steps
             widget: list
-            hint: "Numbered automatically. Four steps fit in one row on desktop."
+            i18n: true
+            hint: "Numbered automatically. Four steps fit in one row on desktop. Each language has its own list."
             summary: "{{fields.title}}"
             fields:
               - { label: "Title", name: title, widget: string }
@@ -191,19 +246,21 @@ collections:
       - name: studio
         label: "Studio / about"
         file: content/studio.json
+        i18n: true
         fields:
-          - { label: "Photo", name: image, widget: image, hint: "Landscape 4:3 works best." }
-          - { label: "Photo description", name: imageAlt, widget: string, hint: "A few words describing the photo, for screen readers." }
-          - { label: "Caption on the photo", name: imageCaption, widget: string, required: false, hint: "Small text in the bottom-left corner of the photo." }
-          - { label: "Small label", name: label, widget: string, hint: "e.g. The workshop" }
-          - { label: "Headline", name: headline, widget: text, hint: "Press Enter to force a line break." }
-          - { label: "Text", name: text, widget: text }
-          - { label: "Second paragraph", name: textSecondary, widget: text, required: false, hint: "Shown in grey under the main text. Leave empty to hide." }
+          - { label: "Photo", name: image, widget: image, i18n: duplicate, hint: "Same photo for every language. Landscape 4:3 works best." }
+          - { label: "Photo description", name: imageAlt, widget: string, i18n: true, hint: "A few words describing the photo, for screen readers." }
+          - { label: "Caption on the photo", name: imageCaption, widget: string, required: false, i18n: true, hint: "Small text in the bottom-left corner of the photo." }
+          - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. The workshop" }
+          - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
+          - { label: "Text", name: text, widget: text, i18n: true }
+          - { label: "Second paragraph", name: textSecondary, widget: text, required: false, i18n: true, hint: "Shown in grey under the main text. Leave empty to hide." }
           - label: "Numbers"
             name: stats
             widget: list
+            i18n: true
             required: false
-            hint: "Big number + small caption. Four fit best."
+            hint: "Big number + small caption. Four fit best. Each language has its own list."
             summary: "{{fields.value}} — {{fields.label}}"
             fields:
               - { label: "Value", name: value, widget: string, hint: "e.g. 400+" }
@@ -213,94 +270,103 @@ collections:
       - name: quote
         label: "Quote section & form"
         file: content/quote.json
+        i18n: true
         fields:
-          - { label: "Small label", name: label, widget: string, hint: "e.g. Request a quote" }
-          - { label: "Headline", name: headline, widget: text, hint: "Press Enter to force a line break." }
-          - { label: "Text", name: text, widget: text }
+          - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. Request a quote" }
+          - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
+          - { label: "Text", name: text, widget: text, i18n: true }
           - label: "Steps"
             name: steps
             widget: list
-            hint: "Numbered automatically."
+            i18n: true
+            hint: "Numbered automatically. Each language has its own list."
             summary: "{{fields.title}}"
             fields:
               - { label: "Title", name: title, widget: string }
               - { label: "Text", name: text, widget: text }
-          - { label: "'Or write directly' text", name: directText, widget: string, hint: "Shown before the email address." }
-          - { label: "Direct email address", name: directEmail, widget: string, hint: "Clicking it opens the visitor's email app." }
+          - { label: "'Or write directly' text", name: directText, widget: string, i18n: true, hint: "Shown before the email address." }
+          - { label: "Direct email address", name: directEmail, widget: string, i18n: duplicate, hint: "Same for every language. Clicking it opens the visitor's email app." }
           - label: "Form"
             name: form
             widget: object
-            hint: "Labels, placeholder texts and options of the quote form. Submissions arrive in Netlify → Forms (and by email if notifications are set up)."
+            i18n: true
+            hint: "Labels, placeholder texts and options of the quote form. All languages submit to the same Netlify form ('quote'); each submission says which language page it came from."
             fields:
-              - { label: "Name — label", name: nameLabel, widget: string }
-              - { label: "Name — placeholder", name: namePlaceholder, widget: string }
-              - { label: "Email — label", name: emailLabel, widget: string }
-              - { label: "Email — placeholder", name: emailPlaceholder, widget: string }
-              - { label: "Phone — label", name: phoneLabel, widget: string }
-              - { label: "Phone — placeholder", name: phonePlaceholder, widget: string }
-              - { label: "Bike or vehicle — label", name: vehicleLabel, widget: string }
-              - { label: "Bike or vehicle — placeholder", name: vehiclePlaceholder, widget: string }
-              - { label: "'What do you need' — label", name: needLabel, widget: string }
+              - { label: "Name — label", name: nameLabel, widget: string, i18n: true }
+              - { label: "Name — placeholder", name: namePlaceholder, widget: string, i18n: true }
+              - { label: "Email — label", name: emailLabel, widget: string, i18n: true }
+              - { label: "Email — placeholder", name: emailPlaceholder, widget: string, i18n: true }
+              - { label: "Phone — label", name: phoneLabel, widget: string, i18n: true }
+              - { label: "Phone — placeholder", name: phonePlaceholder, widget: string, i18n: true }
+              - { label: "Bike or vehicle — label", name: vehicleLabel, widget: string, i18n: true }
+              - { label: "Bike or vehicle — placeholder", name: vehiclePlaceholder, widget: string, i18n: true }
+              - { label: "'What do you need' — label", name: needLabel, widget: string, i18n: true }
               - label: "'What do you need' — options"
                 name: needOptions
                 widget: list
-                hint: "Buttons the visitor picks from. Tick 'Pre-selected' on exactly one."
+                i18n: true
+                hint: "Visitors can pick several. Tick 'Pre-selected' on the ones that should start selected. Each language has its own list."
                 summary: "{{fields.label}}"
                 fields:
                   - { label: "Option text", name: label, widget: string }
                   - { label: "Pre-selected", name: selected, widget: boolean, default: false, required: false }
-              - { label: "Due date — label", name: dateLabel, widget: string }
-              - { label: "Finish — label", name: finishLabel, widget: string }
+              - { label: "Due date — label", name: dateLabel, widget: string, i18n: true }
+              - { label: "Finish — label", name: finishLabel, widget: string, i18n: true }
               - label: "Finish — options"
                 name: finishOptions
                 widget: list
-                hint: "Tick 'Pre-selected' on exactly one."
+                i18n: true
+                hint: "Visitors pick exactly one. Tick 'Pre-selected' on one option. Each language has its own list."
                 summary: "{{fields.label}}"
                 fields:
                   - { label: "Option text", name: label, widget: string }
                   - { label: "Pre-selected", name: selected, widget: boolean, default: false, required: false }
-              - { label: "Brief — label", name: briefLabel, widget: string }
-              - { label: "Brief — placeholder", name: briefPlaceholder, widget: text }
-              - { label: "Photos — label", name: photosLabel, widget: string }
-              - { label: "Photos — button text", name: photosButton, widget: string }
-              - { label: "Photos — one attached", name: photosAttachedOne, widget: string, hint: "Shown after the visitor picks a single photo." }
-              - { label: "Photos — several attached", name: photosAttachedMany, widget: string, hint: "Use {count} where the number should go." }
-              - { label: "Photos — too large message", name: photosTooLarge, widget: string, hint: "Shown if the photos add up to more than 8 MB." }
-              - { label: "Send button text", name: buttonText, widget: string }
-              - { label: "Send button text while sending", name: sendingText, widget: string }
-              - { label: "Note under the button", name: note, widget: string }
-              - { label: "Error message", name: errorMessage, widget: string, hint: "Shown if sending fails." }
+              - { label: "Brief — label", name: briefLabel, widget: string, i18n: true }
+              - { label: "Brief — placeholder", name: briefPlaceholder, widget: text, i18n: true }
+              - { label: "Photos — label", name: photosLabel, widget: string, i18n: true }
+              - { label: "Photos — button text", name: photosButton, widget: string, i18n: true }
+              - { label: "Photos — one attached", name: photosAttachedOne, widget: string, i18n: true, hint: "Shown after the visitor picks a single photo." }
+              - { label: "Photos — several attached", name: photosAttachedMany, widget: string, i18n: true, hint: "Use {count} where the number should go." }
+              - { label: "Photos — too large message", name: photosTooLarge, widget: string, i18n: true, hint: "Shown if the photos add up to more than 8 MB." }
+              - { label: "Send button text", name: buttonText, widget: string, i18n: true }
+              - { label: "Send button text while sending", name: sendingText, widget: string, i18n: true }
+              - { label: "Note under the button", name: note, widget: string, i18n: true }
+              - { label: "Error message", name: errorMessage, widget: string, i18n: true, hint: "Shown if sending fails." }
           - label: "Success message"
             name: success
             widget: object
+            i18n: true
             hint: "Replaces the form after a successful submission."
             fields:
-              - { label: "Title", name: title, widget: string }
-              - { label: "Message", name: message, widget: text, hint: "Use {name} where the visitor's first name should go." }
-              - { label: "'Send another' link text", name: againButton, widget: string }
+              - { label: "Title", name: title, widget: string, i18n: true }
+              - { label: "Message", name: message, widget: text, i18n: true, hint: "Use {name} where the visitor's first name should go." }
+              - { label: "'Send another' link text", name: againButton, widget: string, i18n: true }
 
       # ------------------------------------------------------------ Footer
       - name: footer
         label: "Footer"
         file: content/footer.json
+        i18n: true
         fields:
-          - { label: "Brand name", name: brand, widget: string }
-          - { label: "Description", name: description, widget: text }
-          - { label: "Contact column — heading", name: contactLabel, widget: string }
-          - { label: "Email", name: email, widget: string }
-          - { label: "Phone", name: phone, widget: string, hint: "Written as it should be displayed, e.g. +372 5555 5555" }
-          - { label: "Opening hours", name: hours, widget: string }
-          - { label: "Links column — heading", name: elsewhereLabel, widget: string }
-          - { label: "Instagram — link text", name: instagramLabel, widget: string }
-          - { label: "Instagram — address", name: instagramUrl, widget: string, required: false, hint: "Full address, e.g. https://instagram.com/apexline. Leave empty to hide." }
+          - { label: "Brand name", name: brand, widget: string, i18n: true }
+          - { label: "Description", name: description, widget: text, i18n: true }
+          - { label: "Contact column — heading", name: contactLabel, widget: string, i18n: true }
+          - { label: "Email", name: email, widget: string, i18n: duplicate, hint: "Same for every language." }
+          - { label: "Phone", name: phone, widget: string, i18n: duplicate, hint: "Written as it should be displayed, e.g. +372 5555 5555. Same for every language." }
+          - { label: "Opening hours", name: hours, widget: string, i18n: true }
+          - { label: "Links column — heading", name: elsewhereLabel, widget: string, i18n: true }
+          - { label: "Instagram — link text", name: instagramLabel, widget: string, i18n: true }
+          - { label: "Instagram — address", name: instagramUrl, widget: string, required: false, i18n: duplicate, hint: "Full address, e.g. https://instagram.com/apexline. Leave empty to hide. Same for every language." }
           - label: "Other links"
             name: links
             widget: list
+            i18n: true
             required: false
+            hint: "Each language has its own list."
             summary: "{{fields.label}}"
             fields:
               - { label: "Link text", name: label, widget: string }
               - { label: "Address", name: url, widget: string, hint: "A page section like #quote, or a full address." }
               - { label: "Show in grey", name: muted, widget: boolean, default: false, required: false }
-          - { label: "Copyright line", name: copyright, widget: string }
-          - { label: "Tagline (bottom right)", name: tagline, widget: string }
+          - { label: "Copyright line", name: copyright, widget: string, i18n: true }
+          - { label: "Tagline (bottom right)", name: tagline, widget: string, i18n: true }

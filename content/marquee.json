@@ -1,12 +1,38 @@
 {
-  "keywords": [
-    "Motocross graphics kits",
-    "Full vehicle wraps",
-    "Number plates",
-    "Latex large-format print",
-    "Contour-cut decals",
-    "Race team livery",
-    "Apparel transfers",
-    "Same-week turnaround"
-  ]
+  "en": {
+    "keywords": [
+      "Motocross graphics kits",
+      "Full vehicle wraps",
+      "Number plates",
+      "Latex large-format print",
+      "Contour-cut decals",
+      "Race team livery",
+      "Apparel transfers",
+      "Same-week turnaround"
+    ]
+  },
+  "et": {
+    "keywords": [
+      "Motokrossi graafikakomplektid",
+      "Sõidukite täiskiletus",
+      "Numbrilauad",
+      "Lateks-suurformaattrükk",
+      "Kontuurlõikega kleebised",
+      "Võistkondade kujundus",
+      "Rõivaste siirdetrükk",
+      "Valmis sama nädala jooksul"
+    ]
+  },
+  "ru": {
+    "keywords": [
+      "Комплекты графики для мотокросса",
+      "Полная оклейка авто",
+      "Номерные таблички",
+      "Широкоформатная латексная печать",
+      "Наклейки с контурной резкой",
+      "Ливреи гоночных команд",
+      "Термотрансферы на одежду",
+      "Готово в течение недели"
+    ]
+  }
 }

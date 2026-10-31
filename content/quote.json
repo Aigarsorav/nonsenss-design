@@ -1,53 +1,161 @@
 {
-  "label": "Request a quote",
-  "headline": "Tell us what\nyou're building",
-  "text": "Every request is read by the person who will design it. Send whatever you have — a rough idea, a reference, or a bike that needs to look fast parked.",
-  "steps": [
-    { "title": "You send the brief", "text": "Photos, the bike, the number and any sponsors you need on it." },
-    { "title": "We price it", "text": "A fixed quote back within one working day — no hourly surprises." },
-    { "title": "Proof, then print", "text": "You approve the artwork on your own bike before we cut a single decal." }
-  ],
-  "directText": "Or write directly —",
-  "directEmail": "studio@apexline.example",
-  "form": {
-    "nameLabel": "Your name",
-    "namePlaceholder": "Rider or team name",
-    "emailLabel": "Email",
-    "emailPlaceholder": "you@example.com",
-    "phoneLabel": "Phone",
-    "phonePlaceholder": "Optional",
-    "vehicleLabel": "Bike or vehicle",
-    "vehiclePlaceholder": "e.g. KTM 250 SX-F 2023",
-    "needLabel": "What do you need",
-    "needOptions": [
-      { "label": "Full vehicle wrap", "selected": false },
-      { "label": "Motocross graphics kit", "selected": true },
-      { "label": "Printing / decals", "selected": false },
-      { "label": "Race team kit", "selected": false }
+  "en": {
+    "label": "Request a quote",
+    "headline": "Tell us what\nyou're building",
+    "text": "Every request is read by the person who will design it. Send whatever you have — a rough idea, a reference, or a bike that needs to look fast parked.",
+    "steps": [
+      { "title": "You send the brief", "text": "Photos, the bike, the number and any sponsors you need on it." },
+      { "title": "We price it", "text": "A fixed quote back within one working day — no hourly surprises." },
+      { "title": "Proof, then print", "text": "You approve the artwork on your own bike before we cut a single decal." }
     ],
-    "dateLabel": "Race / due date",
-    "finishLabel": "Finish",
-    "finishOptions": [
-      { "label": "Gloss", "selected": true },
-      { "label": "Matte", "selected": false },
-      { "label": "Metallic", "selected": false },
-      { "label": "Chrome delete", "selected": false }
-    ],
-    "briefLabel": "Brief",
-    "briefPlaceholder": "Colours, number, sponsors, the look you're after — the more the better.",
-    "photosLabel": "Photos of the bike",
-    "photosButton": "Attach photos (optional)",
-    "photosAttachedOne": "1 photo attached",
-    "photosAttachedMany": "{count} photos attached",
-    "photosTooLarge": "Those photos are too large to send together (8 MB max). Try fewer or smaller photos.",
-    "buttonText": "Send the brief",
-    "sendingText": "Sending",
-    "note": "No obligation · fixed price back in one working day",
-    "errorMessage": "That didn't go through. Try again, or send the details straight to the studio email."
+    "directText": "Or write directly —",
+    "directEmail": "studio@apexline.example",
+    "form": {
+      "nameLabel": "Your name",
+      "namePlaceholder": "Rider or team name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "Optional",
+      "vehicleLabel": "Bike or vehicle",
+      "vehiclePlaceholder": "e.g. KTM 250 SX-F 2023",
+      "needLabel": "What do you need",
+      "needOptions": [
+        { "label": "Full vehicle wrap", "selected": false },
+        { "label": "Motocross graphics kit", "selected": true },
+        { "label": "Printing / decals", "selected": false },
+        { "label": "Race team kit", "selected": false }
+      ],
+      "dateLabel": "Race / due date",
+      "finishLabel": "Finish",
+      "finishOptions": [
+        { "label": "Gloss", "selected": true },
+        { "label": "Matte", "selected": false },
+        { "label": "Metallic", "selected": false },
+        { "label": "Chrome delete", "selected": false }
+      ],
+      "briefLabel": "Brief",
+      "briefPlaceholder": "Colours, number, sponsors, the look you're after — the more the better.",
+      "photosLabel": "Photos of the bike",
+      "photosButton": "Attach photos (optional)",
+      "photosAttachedOne": "1 photo attached",
+      "photosAttachedMany": "{count} photos attached",
+      "photosTooLarge": "Those photos are too large to send together (8 MB max). Try fewer or smaller photos.",
+      "buttonText": "Send the brief",
+      "sendingText": "Sending",
+      "note": "No obligation · fixed price back in one working day",
+      "errorMessage": "That didn't go through. Try again, or send the details straight to the studio email."
+    },
+    "success": {
+      "title": "Request received",
+      "message": "Thanks {name}. We'll look over the details and come back with a fixed price, usually within one working day.",
+      "againButton": "Send another request"
+    }
   },
-  "success": {
-    "title": "Request received",
-    "message": "Thanks {name}. We'll look over the details and come back with a fixed price, usually within one working day.",
-    "againButton": "Send another request"
+  "et": {
+    "label": "Küsi pakkumist",
+    "headline": "Räägi, mida\nsa ehitad",
+    "text": "Iga päringut loeb inimene, kes selle ka kujundab. Saada, mis sul on — toores mõte, näidis või ratas, mis peab ka seistes kiire välja nägema.",
+    "steps": [
+      { "title": "Sina saadad briifi", "text": "Fotod, ratas, number ja sponsorid, mis peale peavad minema." },
+      { "title": "Meie paneme hinna", "text": "Kindel pakkumine ühe tööpäeva jooksul — ilma tunnihinna üllatusteta." },
+      { "title": "Kavand, siis trükk", "text": "Kinnitad kujunduse oma ratta peal, enne kui lõikame ainsagi kleebise." }
+    ],
+    "directText": "Või kirjuta otse —",
+    "directEmail": "studio@apexline.example",
+    "form": {
+      "nameLabel": "Sinu nimi",
+      "namePlaceholder": "Sõitja või võistkonna nimi",
+      "emailLabel": "E-post",
+      "emailPlaceholder": "sina@näide.ee",
+      "phoneLabel": "Telefon",
+      "phonePlaceholder": "Valikuline",
+      "vehicleLabel": "Ratas või sõiduk",
+      "vehiclePlaceholder": "nt KTM 250 SX-F 2023",
+      "needLabel": "Mida sul vaja on",
+      "needOptions": [
+        { "label": "Sõiduki täiskiletus", "selected": false },
+        { "label": "Motokrossi graafikakomplekt", "selected": true },
+        { "label": "Trükk / kleebised", "selected": false },
+        { "label": "Võistkonna komplekt", "selected": false }
+      ],
+      "dateLabel": "Võistluse / tähtaja kuupäev",
+      "finishLabel": "Viimistlus",
+      "finishOptions": [
+        { "label": "Läikiv", "selected": true },
+        { "label": "Matt", "selected": false },
+        { "label": "Metallik", "selected": false },
+        { "label": "Chrome delete", "selected": false }
+      ],
+      "briefLabel": "Briif",
+      "briefPlaceholder": "Värvid, number, sponsorid, soovitud ilme — mida rohkem, seda parem.",
+      "photosLabel": "Fotod rattast",
+      "photosButton": "Lisa fotod (valikuline)",
+      "photosAttachedOne": "1 foto lisatud",
+      "photosAttachedMany": "{count} fotot lisatud",
+      "photosTooLarge": "Need fotod on kokku liiga suured (max 8 MB). Proovi vähem või väiksemaid fotosid.",
+      "buttonText": "Saada briif",
+      "sendingText": "Saadan",
+      "note": "Ilma kohustusteta · kindel hind ühe tööpäeva jooksul",
+      "errorMessage": "See ei läinud läbi. Proovi uuesti või saada andmed otse stuudio e-postile."
+    },
+    "success": {
+      "title": "Päring kätte saadud",
+      "message": "Aitäh, {name}. Vaatame detailid üle ja tuleme kindla hinnaga tagasi, tavaliselt ühe tööpäeva jooksul.",
+      "againButton": "Saada veel üks päring"
+    }
+  },
+  "ru": {
+    "label": "Запросить расчёт",
+    "headline": "Расскажите,\nчто вы строите",
+    "text": "Каждый запрос читает тот, кто будет делать дизайн. Присылайте что есть — сырую идею, референс или мотоцикл, который должен выглядеть быстрым даже на стоянке.",
+    "steps": [
+      { "title": "Вы присылаете бриф", "text": "Фото, мотоцикл, номер и спонсоры, которые должны быть на нём." },
+      { "title": "Мы считаем цену", "text": "Фиксированная цена в течение одного рабочего дня — без сюрпризов с почасовой оплатой." },
+      { "title": "Макет, затем печать", "text": "Вы утверждаете дизайн на своём мотоцикле, прежде чем мы вырежем хоть одну наклейку." }
+    ],
+    "directText": "Или напишите напрямую —",
+    "directEmail": "studio@apexline.example",
+    "form": {
+      "nameLabel": "Ваше имя",
+      "namePlaceholder": "Имя райдера или команды",
+      "emailLabel": "Эл. почта",
+      "emailPlaceholder": "you@example.com",
+      "phoneLabel": "Телефон",
+      "phonePlaceholder": "Необязательно",
+      "vehicleLabel": "Мотоцикл или авто",
+      "vehiclePlaceholder": "напр. KTM 250 SX-F 2023",
+      "needLabel": "Что вам нужно",
+      "needOptions": [
+        { "label": "Полная оклейка авто", "selected": false },
+        { "label": "Комплект графики для мотокросса", "selected": true },
+        { "label": "Печать / наклейки", "selected": false },
+        { "label": "Комплект для команды", "selected": false }
+      ],
+      "dateLabel": "Дата гонки / срок",
+      "finishLabel": "Покрытие",
+      "finishOptions": [
+        { "label": "Глянец", "selected": true },
+        { "label": "Мат", "selected": false },
+        { "label": "Металлик", "selected": false },
+        { "label": "Chrome delete", "selected": false }
+      ],
+      "briefLabel": "Бриф",
+      "briefPlaceholder": "Цвета, номер, спонсоры, желаемый стиль — чем подробнее, тем лучше.",
+      "photosLabel": "Фото мотоцикла",
+      "photosButton": "Прикрепить фото (необязательно)",
+      "photosAttachedOne": "Прикреплено 1 фото",
+      "photosAttachedMany": "Прикреплено фото: {count}",
+      "photosTooLarge": "Фото слишком большие для отправки вместе (макс. 8 МБ). Попробуйте меньше или более лёгкие фото.",
+      "buttonText": "Отправить бриф",
+      "sendingText": "Отправляем",
+      "note": "Без обязательств · фиксированная цена за один рабочий день",
+      "errorMessage": "Не удалось отправить. Попробуйте ещё раз или напишите напрямую на почту студии."
+    },
+    "success": {
+      "title": "Запрос получен",
+      "message": "Спасибо, {name}. Посмотрим детали и вернёмся с фиксированной ценой, обычно в течение одного рабочего дня.",
+      "againButton": "Отправить ещё один запрос"
+    }
   }
 }

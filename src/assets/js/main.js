@@ -264,7 +264,9 @@
   const showSuccess = (name) => {
     const text = $("[data-success-text]", success);
     const first = (name || "").trim().split(/\s+/)[0];
-    text.textContent = text.dataset.template.replace(/\{name\}\s?/, first ? first + (/\{name\}\s/.test(text.dataset.template) ? " " : "") : "").replace(/\s+\./, ".");
+    const template = text.dataset.template;
+    // Without a name, drop "{name}" plus any comma/space before it: "Thanks {name}." → "Thanks."
+    text.textContent = first ? template.replace("{name}", first) : template.replace(/[,\s]*\{name\}/, "").replace(/\s+([.!?,])/, "$1");
     form.hidden = true;
     success.hidden = false;
     success.focus({ preventScroll: true });
@@ -280,6 +282,8 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     errorBox.hidden = true;
+    // Plain-text summary of the multi-select so the notification email reads cleanly.
+    $("[data-need-summary]", form).value = $$("[data-need-group] input:checked", form).map((i) => i.value).join(", ");
     const data = new FormData(form);
     const files = [...fileInput.files].slice(0, MAX_FILES);
     for (let i = 1; i <= MAX_FILES; i++) data.delete(`photo_${i}`);

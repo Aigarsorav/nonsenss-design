@@ -37,7 +37,7 @@ Images referenced from `content/` are resized and compressed at build time by `@
 
 ### Quote form (Netlify Forms)
 
-The quote form is a native HTML form with `data-netlify="true"`, so Netlify detects it at build time — no setup needed. Submissions appear under **Site → Forms → quote**, including the selected "What do you need" / "Finish" options and up to five attached photos.
+The quote form is a native HTML form with `data-netlify="true"`, so Netlify detects it at build time — no setup needed. Submissions from all three languages land in the same **Site → Forms → quote** list. Each one includes a `language` field (`en`, `et` or `ru`), the chosen "What do you need" options (multi-select; sent both as a readable `need` summary line and as individual `need[]` values), the single "Finish" choice, and up to five attached photos.
 
 To get an email for each submission: **Site configuration → Notifications → Form submission → Add notification → Email**, pick the `quote` form.
 
@@ -74,9 +74,22 @@ Anyone who edits content needs **write access to the GitHub repository**:
 Everything textual, every image, and every list (projects, categories, services, steps, keywords, form options). Layout, colours and typography are fixed. Each field in the CMS has a hint explaining where it appears.
 
 Notes for editors:
-- **Work → Filter categories** can be added, renamed, removed and reordered. "All work" is always the first filter. Each project picks its category from that list; after renaming a category, re-select it on the projects that used it.
+- **Work → Filter categories** can be added, renamed, removed and reordered. "All work" is always the first filter. Each category has a short technical ID (e.g. `wraps`) that projects point to — keep IDs stable; rename the names freely.
 - **Work → Projects**: the first gallery photo is the card cover. Drag the handle to reorder projects or gallery photos.
 - Headline fields: press Enter to force a line break. The lime-coloured part of the hero headline is its own field.
+
+### 4. Languages
+
+The site exists in English (`/`), Estonian (`/et/`) and Russian (`/ru/`), with a language switcher in the header and the phone menu, `hreflang` tags, and `<html lang>` per page. Images and project galleries are shared; only texts differ.
+
+In the CMS, every section is edited with Decap's built-in i18n: pick **EN** at the top of the editor and use the locale toggle to show **ET** and **RU** next to it. Nothing is translated automatically — each language is written by hand.
+
+- Fields marked as the same for every language (photos, email, phone, links) are edited once, in the EN column.
+- Lists of texts (services, process steps, keywords, form options, …) exist once per language. Keep them in the same order so the numbering lines up.
+- **Projects and categories are one shared list** (Decap can't share photos inside a translated list), so they appear in the EN column only, with English / Estonian / Russian sub-fields for the texts.
+- On the Russian page, headings use *Roboto Flex* instead of *Archivo*, because Archivo has no Cyrillic glyphs; the width/weight match the English design.
+
+Under the hood each `content/*.json` file is `{ "en": {…}, "et": {…}, "ru": {…} }`. Any field missing from a language falls back to English at build time.
 
 ## Custom domain
 

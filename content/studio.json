@@ -1,15 +1,47 @@
 {
-  "image": "/images/site/studio-application.jpg",
-  "imageAlt": "Vinyl being applied to a motocross body panel",
-  "imageCaption": "Bay 01 · application",
-  "label": "The workshop",
-  "headline": "Small studio,\nrace-day habits",
-  "text": "Apexline started with a plotter in a garage and a stack of shroud templates. Ten years on, the same two people still draw every kit, print it on the machine in the corner and fit it themselves — because a wrap only looks right if the person who designed it is the one holding the squeegee.",
-  "textSecondary": "We work with riders, teams and the odd van that needs to look like it means business. Everything is proofed on your own bike before it goes to print.",
-  "stats": [
-    { "value": "2016", "label": "Studio founded" },
-    { "value": "400+", "label": "Bikes kitted" },
-    { "value": "5 days", "label": "Typical turnaround" },
-    { "value": "100%", "label": "In-house print" }
-  ]
+  "en": {
+    "image": "/images/uploads/studio-application.jpg",
+    "imageAlt": "Vinyl being applied to a motocross body panel",
+    "imageCaption": "Bay 01 · application",
+    "label": "The workshop",
+    "headline": "Small studio,\nrace-day habits",
+    "text": "Apexline started with a plotter in a garage and a stack of shroud templates. Ten years on, the same two people still draw every kit, print it on the machine in the corner and fit it themselves — because a wrap only looks right if the person who designed it is the one holding the squeegee.",
+    "textSecondary": "We work with riders, teams and the odd van that needs to look like it means business. Everything is proofed on your own bike before it goes to print.",
+    "stats": [
+      { "value": "2016", "label": "Studio founded" },
+      { "value": "400+", "label": "Bikes kitted" },
+      { "value": "5 days", "label": "Typical turnaround" },
+      { "value": "100%", "label": "In-house print" }
+    ]
+  },
+  "et": {
+    "image": "/images/uploads/studio-application.jpg",
+    "imageAlt": "Vinüülkile paigaldamine motokrossi plastikule",
+    "imageCaption": "Boks 01 · paigaldus",
+    "label": "Töökoda",
+    "headline": "Väike stuudio,\nvõidusõidu rütm",
+    "text": "Apexline sai alguse ühest plotterist garaažis ja virnast katete šabloonidest. Kümme aastat hiljem joonistavad needsamad kaks inimest iga komplekti ise, trükivad selle nurgas seisval masinal ja paigaldavad oma kätega — sest kile näeb õige välja ainult siis, kui kaabitsat hoiab seesama inimene, kes selle kujundas.",
+    "textSecondary": "Töötame sõitjate, võistkondade ja aeg-ajalt ka kaubikuga, mis peab välja nägema nagu asja ees. Kõik kinnitatakse sinu enda ratta peal, enne kui see trükki läheb.",
+    "stats": [
+      { "value": "2016", "label": "Stuudio asutatud" },
+      { "value": "400+", "label": "Ratast varustatud" },
+      { "value": "5 päeva", "label": "Tavaline tähtaeg" },
+      { "value": "100%", "label": "Trükk kohapeal" }
+    ]
+  },
+  "ru": {
+    "image": "/images/uploads/studio-application.jpg",
+    "imageAlt": "Нанесение винила на пластик мотоцикла для мотокросса",
+    "imageCaption": "Бокс 01 · установка",
+    "label": "Мастерская",
+    "headline": "Маленькая студия,\nгоночные привычки",
+    "text": "Apexline начался с плоттера в гараже и стопки шаблонов обтекателей. Десять лет спустя те же два человека сами рисуют каждый комплект, печатают его на станке в углу и сами устанавливают — потому что оклейка выглядит правильно только тогда, когда ракель держит тот, кто её нарисовал.",
+    "textSecondary": "Мы работаем с райдерами, командами и иногда с фургоном, который должен выглядеть серьёзно. Всё согласуется на вашем собственном мотоцикле до печати.",
+    "stats": [
+      { "value": "2016", "label": "Студия основана" },
+      { "value": "400+", "label": "Мотоциклов оформлено" },
+      { "value": "5 дней", "label": "Обычный срок" },
+      { "value": "100%", "label": "Печать у нас" }
+    ]
+  }
 }

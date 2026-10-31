@@ -1,7 +1,7 @@
 <div class="marquee">
-  <p class="visually-hidden">{{ marquee.keywords | join(" · ") }}</p>
+  <p class="visually-hidden">{{ t.marquee.keywords | join(" · ") }}</p>
   <div class="marquee__track" aria-hidden="true">
-    {% for pass in [1, 2] %}{% for keyword in marquee.keywords %}
+    {% for pass in [1, 2] %}{% for keyword in t.marquee.keywords %}
     <span class="marquee__item"><span class="marquee__text">{{ keyword }}</span><span class="marquee__dot"></span></span>
     {% endfor %}{% endfor %}
   </div>

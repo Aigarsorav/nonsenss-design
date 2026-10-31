@@ -1,10 +1,32 @@
 {
-  "eyebrow": "Tallinn, Estonia · wrap & graphics studio",
-  "headline": "Graphics built\nfor the",
-  "headlineHighlight": "gate drop",
-  "intro": "Wrap design, printing and race graphics for motocross and anything else with a motor. Drawn, proofed, printed and fitted under one roof — so the kit on your bike is exactly the kit you signed off.",
-  "primaryButton": "Request a quote",
-  "secondaryButton": "See the work",
-  "backgroundImage": "/images/site/hero-rally-car.jpg",
-  "backgroundAlt": "Matte black rally car with custom graphics in the wrap studio"
+  "en": {
+    "eyebrow": "Tallinn, Estonia · wrap & graphics studio",
+    "headline": "Graphics built\nfor the",
+    "headlineHighlight": "gate drop",
+    "intro": "Wrap design, printing and race graphics for motocross and anything else with a motor. Drawn, proofed, printed and fitted under one roof — so the kit on your bike is exactly the kit you signed off.",
+    "primaryButton": "Request a quote",
+    "secondaryButton": "See the work",
+    "backgroundImage": "/images/uploads/hero-rally-car.jpg",
+    "backgroundAlt": "Matte black rally car with custom graphics in the wrap studio"
+  },
+  "et": {
+    "eyebrow": "Tallinn, Eesti · kilede ja graafika stuudio",
+    "headline": "Graafika, mis on\nsündinud",
+    "headlineHighlight": "stardiks",
+    "intro": "Kilede kujundus, trükk ja võistlusgraafika motokrossile ja kõigele muule, millel on mootor. Joonistatud, kinnitatud, trükitud ja paigaldatud ühe katuse all — nii on sinu ratta komplekt täpselt see, mille sa heaks kiitsid.",
+    "primaryButton": "Küsi pakkumist",
+    "secondaryButton": "Vaata töid",
+    "backgroundImage": "/images/uploads/hero-rally-car.jpg",
+    "backgroundAlt": "Mattmust ralliauto eritellimusel graafikaga kilestuudios"
+  },
+  "ru": {
+    "eyebrow": "Таллин, Эстония · студия оклейки и графики",
+    "headline": "Графика,\nсозданная",
+    "headlineHighlight": "для старта",
+    "intro": "Дизайн оклейки, печать и гоночная графика для мотокросса и всего, у чего есть мотор. Рисуем, согласуем, печатаем и устанавливаем под одной крышей — так что комплект на вашем мотоцикле именно тот, который вы утвердили.",
+    "primaryButton": "Запросить расчёт",
+    "secondaryButton": "Смотреть работы",
+    "backgroundImage": "/images/uploads/hero-rally-car.jpg",
+    "backgroundAlt": "Матово-чёрный раллийный автомобиль с индивидуальной графикой в студии оклейки"
+  }
 }

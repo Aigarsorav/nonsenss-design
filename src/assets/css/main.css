@@ -18,6 +18,7 @@
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --header-h: 66px;
 }
+:root:lang(ru) { --font-heading: "Roboto Flex", "Archivo", "Helvetica Neue", Arial, sans-serif; }
 
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; border: 0 solid var(--border); margin: 0; padding: 0; }
@@ -78,6 +79,8 @@ ul, ol { list-style: none; }
 .eyebrow__line { width: 32px; height: 1px; background: var(--primary); }
 .eyebrow--hero .eyebrow__line { width: 40px; }
 
+/* Long Estonian/Russian words: only break inside a word when it cannot fit the line at all. */
+.hero__title, .h2, .card__title, .service__title, .step__title, .qsuccess__title, .mobile-menu__link, .footer__brand { overflow-wrap: anywhere; }
 .h2 {
   margin-top: 16px;
   font-size: 36px; line-height: .9; font-weight: 800; text-transform: uppercase;
@@ -133,6 +136,16 @@ ul, ol { list-style: none; }
   color: var(--muted-fg); transition: color .15s var(--ease);
 }
 .nav__link:hover { color: var(--fg); }
+.lang { display: flex; align-items: center; gap: 2px; }
+.lang__link {
+  padding: 4px 6px; font-size: 10px; line-height: 15px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted-fg); border: 1px solid transparent; transition: color .15s var(--ease), border-color .15s var(--ease);
+}
+.lang__link:hover { color: var(--fg); }
+.lang__link[aria-current="page"] { color: var(--primary); border-color: hsl(var(--primary-a) / .5); }
+.lang--menu { gap: 8px; padding-block: 8px 16px; }
+.lang--menu .lang__link { padding: 8px 12px; font-size: 11px; border-color: var(--border); }
+.lang--menu .lang__link[aria-current="page"] { border-color: var(--primary); background: var(--primary); color: var(--primary-fg); }
 .menu-toggle {
   display: flex; width: 40px; height: 40px; align-items: center; justify-content: center;
   border: 1px solid var(--border); color: var(--fg);
@@ -178,6 +191,8 @@ ul, ol { list-style: none; }
   margin-top: 24px; max-width: 896px;
   font-size: 13vw; line-height: .86; font-weight: 800; text-transform: uppercase;
 }
+/* Estonian uppercase Ä/Ö/Ü/Õ carry dots that collide with the line above at the tight 0.86 leading. */
+.hero__title:lang(et) { line-height: .94; }
 .hl { color: var(--primary); }
 .hero__intro { margin-top: 28px; max-width: 576px; font-size: 14px; line-height: 1.8; color: hsl(var(--fg-a) / .75); }
 .hero__actions { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }

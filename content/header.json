@@ -1,13 +1,35 @@
 {
-  "logoText": "Apexline",
-  "logoSubtext": "Studio",
-  "nav": {
-    "work": "Work",
-    "services": "Services",
-    "process": "Process",
-    "studio": "Studio"
+  "en": {
+    "logoText": "Apexline",
+    "logoSubtext": "Studio",
+    "nav": { "work": "Work", "services": "Services", "process": "Process", "studio": "Studio" },
+    "buttonText": "Request a quote",
+    "openMenuLabel": "Open menu",
+    "closeMenuLabel": "Close menu",
+    "mainNavLabel": "Main",
+    "languageLabel": "Language",
+    "skipLink": "Skip to content"
   },
-  "buttonText": "Request a quote",
-  "openMenuLabel": "Open menu",
-  "closeMenuLabel": "Close menu"
+  "et": {
+    "logoText": "Apexline",
+    "logoSubtext": "Studio",
+    "nav": { "work": "Tööd", "services": "Teenused", "process": "Protsess", "studio": "Stuudio" },
+    "buttonText": "Küsi pakkumist",
+    "openMenuLabel": "Ava menüü",
+    "closeMenuLabel": "Sulge menüü",
+    "mainNavLabel": "Peamenüü",
+    "languageLabel": "Keel",
+    "skipLink": "Hüppa sisu juurde"
+  },
+  "ru": {
+    "logoText": "Apexline",
+    "logoSubtext": "Studio",
+    "nav": { "work": "Работы", "services": "Услуги", "process": "Процесс", "studio": "Студия" },
+    "buttonText": "Запросить расчёт",
+    "openMenuLabel": "Открыть меню",
+    "closeMenuLabel": "Закрыть меню",
+    "mainNavLabel": "Главное меню",
+    "languageLabel": "Язык",
+    "skipLink": "К содержимому"
+  }
 }

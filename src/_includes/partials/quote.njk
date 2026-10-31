@@ -1,16 +1,17 @@
-{% set f = quote.form %}
+{% set q = t.quote %}
+{% set f = q.form %}
 <section id="quote" class="quote">
   <div class="quote__grid-bg" aria-hidden="true"></div>
   <div class="container section quote__inner">
     <div>
       <div class="eyebrow">
         <span class="eyebrow__line"></span>
-        <span class="label-tech">{{ quote.label }}</span>
+        <span class="label-tech">{{ q.label }}</span>
       </div>
-      <h2 class="h2 h2--xl">{{ quote.headline | lines }}</h2>
-      <p class="quote__text">{{ quote.text }}</p>
+      <h2 class="h2 h2--xl">{{ q.headline | lines }}</h2>
+      <p class="quote__text">{{ q.text }}</p>
       <ol class="quote__steps">
-        {% for step in quote.steps %}
+        {% for step in q.steps %}
         <li class="qstep">
           <span class="num qstep__num">{{ loop.index | pad2 }}</span>
           <div>
@@ -21,17 +22,20 @@
         {% endfor %}
       </ol>
       <p class="quote__direct">
-        {{ quote.directText }}
-        <a href="mailto:{{ quote.directEmail }}">{{ quote.directEmail }}</a>
+        {{ q.directText }}
+        <a href="mailto:{{ q.directEmail }}">{{ q.directEmail }}</a>
       </p>
     </div>
 
     <div class="quote__panel" data-quote data-error="{{ f.errorMessage }}">
-      <form class="qform" name="quote" method="POST" action="/?sent=1#quote" enctype="multipart/form-data"
+      {# One Netlify form ("quote") shared by every language; `language` tells you which page it came from. #}
+      <form class="qform" name="quote" method="POST" action="{{ locale.url }}?sent=1#quote" enctype="multipart/form-data"
         data-netlify="true" netlify-honeypot="bot-field" data-quote-form
         data-msg-one="{{ f.photosAttachedOne }}" data-msg-many="{{ f.photosAttachedMany }}"
         data-msg-default="{{ f.photosButton }}" data-msg-too-large="{{ f.photosTooLarge }}">
         <input type="hidden" name="form-name" value="quote">
+        <input type="hidden" name="language" value="{{ lang }}">
+        <input type="hidden" name="need" value="" data-need-summary>
         <p class="visually-hidden" aria-hidden="true">
           <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
         </p>
@@ -55,12 +59,12 @@
           </label>
         </div>
 
-        <fieldset class="field qform__block">
+        <fieldset class="field qform__block" data-need-group>
           <legend class="label-tech">{{ f.needLabel }}</legend>
           <div class="chips chips--form">
             {% for option in f.needOptions %}
             <label class="choice">
-              <input type="radio" name="need" value="{{ option.label }}"{% if option.selected %} checked{% endif %}>
+              <input type="checkbox" name="need[]" value="{{ option.label }}"{% if option.selected %} checked{% endif %}>
               <span class="chip chip--form">{{ option.label }}</span>
             </label>
             {% endfor %}
@@ -119,9 +123,9 @@
         <div class="qsuccess__icon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         </div>
-        <h3 class="qsuccess__title">{{ quote.success.title }}</h3>
-        <p class="qsuccess__text" data-success-text data-template="{{ quote.success.message }}">{{ quote.success.message | replace("{name} ", "") | replace("{name}", "") }}</p>
-        <button type="button" class="qsuccess__again" data-quote-again>{{ quote.success.againButton }}</button>
+        <h3 class="qsuccess__title">{{ q.success.title }}</h3>
+        <p class="qsuccess__text" data-success-text data-template="{{ q.success.message }}">{{ q.success.message | replace(", {name}", "") | replace(" {name}", "") | replace("{name}", "") }}</p>
+        <button type="button" class="qsuccess__again" data-quote-again>{{ q.success.againButton }}</button>
       </div>
     </div>
   </div>

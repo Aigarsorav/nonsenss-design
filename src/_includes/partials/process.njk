@@ -3,14 +3,14 @@
     <div>
       <div class="eyebrow">
         <span class="eyebrow__line"></span>
-        <span class="label-tech">{{ process.label }}</span>
+        <span class="label-tech">{{ t.process.label }}</span>
       </div>
-      <h2 class="h2">{{ process.headline | lines }}</h2>
+      <h2 class="h2">{{ t.process.headline | lines }}</h2>
     </div>
-    <p class="process__intro">{{ process.intro }}</p>
+    <p class="process__intro">{{ t.process.intro }}</p>
   </div>
   <ol class="process__grid">
-    {% for step in process.steps %}
+    {% for step in t.process.steps %}
     <li class="step">
       <span class="num num--wide">{{ loop.index | pad2 }}</span>
       <h3 class="step__title">{{ step.title }}</h3>

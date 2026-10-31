@@ -2,36 +2,36 @@
   <div class="container footer__inner">
     <div class="footer__grid">
       <div>
-        <p class="footer__brand">{{ footer.brand }}</p>
-        <p class="footer__desc">{{ footer.description }}</p>
+        <p class="footer__brand">{{ t.footer.brand }}</p>
+        <p class="footer__desc">{{ t.footer.description }}</p>
       </div>
       <div>
-        <h2 class="label-tech footer__label">{{ footer.contactLabel }}</h2>
+        <h2 class="label-tech footer__label">{{ t.footer.contactLabel }}</h2>
         <ul class="footer__list">
-          <li><a href="mailto:{{ footer.email }}">{{ footer.email }}</a></li>
-          <li><a href="{{ footer.phone | telHref }}">{{ footer.phone }}</a></li>
-          <li class="is-muted">{{ footer.hours }}</li>
+          <li><a href="mailto:{{ t.footer.email }}">{{ t.footer.email }}</a></li>
+          <li><a href="{{ t.footer.phone | telHref }}">{{ t.footer.phone }}</a></li>
+          <li class="is-muted">{{ t.footer.hours }}</li>
         </ul>
       </div>
       <div>
-        <h2 class="label-tech footer__label">{{ footer.elsewhereLabel }}</h2>
+        <h2 class="label-tech footer__label">{{ t.footer.elsewhereLabel }}</h2>
         <ul class="footer__list">
-          {% if footer.instagramUrl %}
+          {% if t.footer.instagramUrl %}
           <li>
-            <a href="{{ footer.instagramUrl }}" target="_blank" rel="noopener noreferrer" class="footer__ext">{{ footer.instagramLabel }}
+            <a href="{{ t.footer.instagramUrl }}" target="_blank" rel="noopener noreferrer" class="footer__ext">{{ t.footer.instagramLabel }}
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
             </a>
           </li>
           {% endif %}
-          {% for link in footer.links %}
+          {% for link in t.footer.links %}
           <li><a href="{{ link.url }}"{% if link.muted %} class="is-muted"{% endif %}>{{ link.label }}</a></li>
           {% endfor %}
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
-      <span>{{ footer.copyright }}</span>
-      <span>{{ footer.tagline }}</span>
+      <span>{{ t.footer.copyright }}</span>
+      <span>{{ t.footer.tagline }}</span>
     </div>
   </div>
 </footer>
