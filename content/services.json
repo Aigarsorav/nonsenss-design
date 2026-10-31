@@ -1,0 +1,27 @@
+{
+  "label": "What we do",
+  "headline": "Four ways\nto get kitted",
+  "text": "One studio handles the artwork, the print and the fitting. That means no file handoffs, no colour surprises and one person to call when the race is next weekend.",
+  "services": [
+    {
+      "title": "Vehicle wraps",
+      "description": "Full colour changes and partial wraps for bikes, cars and vans. Cast vinyl, precision-cut in-house, applied in a dust-controlled bay.",
+      "tags": ["Full wrap", "Partial wrap", "Chrome delete", "PPF"]
+    },
+    {
+      "title": "Motocross graphics",
+      "description": "Complete kits designed around your bike, your number and your class. Shroud, tank, fender and plate artwork proofed before a single metre is printed.",
+      "tags": ["Full kit", "Number plates", "Series designs", "Spare sets"]
+    },
+    {
+      "title": "Large-format printing",
+      "description": "Banners, decals, signage, window graphics and apparel transfers. Latex printed, laminated and contour cut — short runs welcome.",
+      "tags": ["Decals", "Banners", "Signage", "Apparel"]
+    },
+    {
+      "title": "Race team support",
+      "description": "Season-long livery programmes with spare sets held on the shelf, so a crash on Saturday never costs you Sunday's gate.",
+      "tags": ["Season livery", "Spares on file", "Pit delivery"]
+    }
+  ]
+}

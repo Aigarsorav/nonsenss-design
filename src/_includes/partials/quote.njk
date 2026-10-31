@@ -1,0 +1,128 @@
+{% set f = quote.form %}
+<section id="quote" class="quote">
+  <div class="quote__grid-bg" aria-hidden="true"></div>
+  <div class="container section quote__inner">
+    <div>
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="label-tech">{{ quote.label }}</span>
+      </div>
+      <h2 class="h2 h2--xl">{{ quote.headline | lines }}</h2>
+      <p class="quote__text">{{ quote.text }}</p>
+      <ol class="quote__steps">
+        {% for step in quote.steps %}
+        <li class="qstep">
+          <span class="num qstep__num">{{ loop.index | pad2 }}</span>
+          <div>
+            <h3 class="qstep__title">{{ step.title }}</h3>
+            <p class="qstep__text">{{ step.text }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+      <p class="quote__direct">
+        {{ quote.directText }}
+        <a href="mailto:{{ quote.directEmail }}">{{ quote.directEmail }}</a>
+      </p>
+    </div>
+
+    <div class="quote__panel" data-quote data-error="{{ f.errorMessage }}">
+      <form class="qform" name="quote" method="POST" action="/?sent=1#quote" enctype="multipart/form-data"
+        data-netlify="true" netlify-honeypot="bot-field" data-quote-form
+        data-msg-one="{{ f.photosAttachedOne }}" data-msg-many="{{ f.photosAttachedMany }}"
+        data-msg-default="{{ f.photosButton }}" data-msg-too-large="{{ f.photosTooLarge }}">
+        <input type="hidden" name="form-name" value="quote">
+        <p class="visually-hidden" aria-hidden="true">
+          <label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+        </p>
+
+        <div class="qform__row">
+          <label class="field">
+            <span class="label-tech">{{ f.nameLabel }}</span>
+            <input class="input" name="name" required autocomplete="name" placeholder="{{ f.namePlaceholder }}">
+          </label>
+          <label class="field">
+            <span class="label-tech">{{ f.emailLabel }}</span>
+            <input class="input" type="email" name="email" required autocomplete="email" placeholder="{{ f.emailPlaceholder }}">
+          </label>
+          <label class="field">
+            <span class="label-tech">{{ f.phoneLabel }}</span>
+            <input class="input" type="tel" name="phone" autocomplete="tel" placeholder="{{ f.phonePlaceholder }}">
+          </label>
+          <label class="field">
+            <span class="label-tech">{{ f.vehicleLabel }}</span>
+            <input class="input" name="vehicle" placeholder="{{ f.vehiclePlaceholder }}">
+          </label>
+        </div>
+
+        <fieldset class="field qform__block">
+          <legend class="label-tech">{{ f.needLabel }}</legend>
+          <div class="chips chips--form">
+            {% for option in f.needOptions %}
+            <label class="choice">
+              <input type="radio" name="need" value="{{ option.label }}"{% if option.selected %} checked{% endif %}>
+              <span class="chip chip--form">{{ option.label }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </fieldset>
+
+        <div class="qform__row qform__block">
+          <label class="field">
+            <span class="label-tech">{{ f.dateLabel }}</span>
+            <input class="input input--date" type="date" name="race_date">
+          </label>
+          <fieldset class="field">
+            <legend class="label-tech">{{ f.finishLabel }}</legend>
+            <div class="chips chips--form">
+              {% for option in f.finishOptions %}
+              <label class="choice">
+                <input type="radio" name="finish" value="{{ option.label }}"{% if option.selected %} checked{% endif %}>
+                <span class="chip chip--form">{{ option.label }}</span>
+              </label>
+              {% endfor %}
+            </div>
+          </fieldset>
+        </div>
+
+        <label class="field qform__block">
+          <span class="label-tech">{{ f.briefLabel }}</span>
+          <textarea class="input input--area" name="brief" rows="4" required placeholder="{{ f.briefPlaceholder }}"></textarea>
+        </label>
+
+        <div class="field qform__block">
+          <span class="label-tech" id="photos-label">{{ f.photosLabel }}</span>
+          <label class="upload">
+            <svg class="upload__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.234 20.252 21 12.3"/><path d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486"/></svg>
+            <span class="upload__text" data-upload-text>{{ f.photosButton }}</span>
+            <input class="visually-hidden" type="file" name="photo_1" accept="image/*" multiple aria-labelledby="photos-label" data-upload-input>
+          </label>
+          {# Extra file fields so Netlify registers up to 5 photos; filled by JavaScript. #}
+          <div hidden>
+            <input type="file" name="photo_2" tabindex="-1" aria-hidden="true">
+            <input type="file" name="photo_3" tabindex="-1" aria-hidden="true">
+            <input type="file" name="photo_4" tabindex="-1" aria-hidden="true">
+            <input type="file" name="photo_5" tabindex="-1" aria-hidden="true">
+          </div>
+        </div>
+
+        <p class="qform__error" role="alert" data-form-error hidden></p>
+
+        <button type="submit" class="btn btn--primary btn--submit" data-submit>
+          <svg class="spinner" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+          <span data-submit-text data-sending="{{ f.sendingText }}">{{ f.buttonText }}</span>
+        </button>
+        <p class="qform__note">{{ f.note }}</p>
+      </form>
+
+      <div class="qsuccess" data-quote-success hidden tabindex="-1">
+        <div class="qsuccess__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h3 class="qsuccess__title">{{ quote.success.title }}</h3>
+        <p class="qsuccess__text" data-success-text data-template="{{ quote.success.message }}">{{ quote.success.message | replace("{name} ", "") | replace("{name}", "") }}</p>
+        <button type="button" class="qsuccess__again" data-quote-again>{{ quote.success.againButton }}</button>
+      </div>
+    </div>
+  </div>
+</section>

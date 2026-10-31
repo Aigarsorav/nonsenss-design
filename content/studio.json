@@ -1,0 +1,15 @@
+{
+  "image": "/images/site/studio-application.jpg",
+  "imageAlt": "Vinyl being applied to a motocross body panel",
+  "imageCaption": "Bay 01 · application",
+  "label": "The workshop",
+  "headline": "Small studio,\nrace-day habits",
+  "text": "Apexline started with a plotter in a garage and a stack of shroud templates. Ten years on, the same two people still draw every kit, print it on the machine in the corner and fit it themselves — because a wrap only looks right if the person who designed it is the one holding the squeegee.",
+  "textSecondary": "We work with riders, teams and the odd van that needs to look like it means business. Everything is proofed on your own bike before it goes to print.",
+  "stats": [
+    { "value": "2016", "label": "Studio founded" },
+    { "value": "400+", "label": "Bikes kitted" },
+    { "value": "5 days", "label": "Typical turnaround" },
+    { "value": "100%", "label": "In-house print" }
+  ]
+}

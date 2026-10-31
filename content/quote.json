@@ -1,0 +1,53 @@
+{
+  "label": "Request a quote",
+  "headline": "Tell us what\nyou're building",
+  "text": "Every request is read by the person who will design it. Send whatever you have — a rough idea, a reference, or a bike that needs to look fast parked.",
+  "steps": [
+    { "title": "You send the brief", "text": "Photos, the bike, the number and any sponsors you need on it." },
+    { "title": "We price it", "text": "A fixed quote back within one working day — no hourly surprises." },
+    { "title": "Proof, then print", "text": "You approve the artwork on your own bike before we cut a single decal." }
+  ],
+  "directText": "Or write directly —",
+  "directEmail": "studio@apexline.example",
+  "form": {
+    "nameLabel": "Your name",
+    "namePlaceholder": "Rider or team name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Optional",
+    "vehicleLabel": "Bike or vehicle",
+    "vehiclePlaceholder": "e.g. KTM 250 SX-F 2023",
+    "needLabel": "What do you need",
+    "needOptions": [
+      { "label": "Full vehicle wrap", "selected": false },
+      { "label": "Motocross graphics kit", "selected": true },
+      { "label": "Printing / decals", "selected": false },
+      { "label": "Race team kit", "selected": false }
+    ],
+    "dateLabel": "Race / due date",
+    "finishLabel": "Finish",
+    "finishOptions": [
+      { "label": "Gloss", "selected": true },
+      { "label": "Matte", "selected": false },
+      { "label": "Metallic", "selected": false },
+      { "label": "Chrome delete", "selected": false }
+    ],
+    "briefLabel": "Brief",
+    "briefPlaceholder": "Colours, number, sponsors, the look you're after — the more the better.",
+    "photosLabel": "Photos of the bike",
+    "photosButton": "Attach photos (optional)",
+    "photosAttachedOne": "1 photo attached",
+    "photosAttachedMany": "{count} photos attached",
+    "photosTooLarge": "Those photos are too large to send together (8 MB max). Try fewer or smaller photos.",
+    "buttonText": "Send the brief",
+    "sendingText": "Sending",
+    "note": "No obligation · fixed price back in one working day",
+    "errorMessage": "That didn't go through. Try again, or send the details straight to the studio email."
+  },
+  "success": {
+    "title": "Request received",
+    "message": "Thanks {name}. We'll look over the details and come back with a fixed price, usually within one working day.",
+    "againButton": "Send another request"
+  }
+}

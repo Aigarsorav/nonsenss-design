@@ -1,0 +1,17 @@
+{
+  "brand": "Apexline",
+  "description": "Wrap · Print · Race Graphics. Workshop and print floor in Tallinn, Estonia. Kits shipped across Europe.",
+  "contactLabel": "Contact",
+  "email": "studio@apexline.example",
+  "phone": "+000 000 0000",
+  "hours": "Mon–Fri 09:00–18:00",
+  "elsewhereLabel": "Elsewhere",
+  "instagramLabel": "Instagram",
+  "instagramUrl": "https://instagram.com",
+  "links": [
+    { "label": "Request a quote", "url": "#quote", "muted": false },
+    { "label": "Studio login", "url": "/admin/", "muted": true }
+  ],
+  "copyright": "© 2026 Apexline Studio",
+  "tagline": "Designed, printed, applied locally"
+}

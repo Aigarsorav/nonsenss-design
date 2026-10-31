@@ -1,0 +1,28 @@
+<section id="studio" class="band">
+  <div class="container section studio">
+    <figure class="studio__media">
+      {{ studio.image | picture(studio.imageAlt, "(min-width: 1024px) 640px, 100vw", { class: "studio__img" }) }}
+      <div class="studio__shade" aria-hidden="true"></div>
+      {% if studio.imageCaption %}<figcaption class="studio__caption">{{ studio.imageCaption }}</figcaption>{% endif %}
+    </figure>
+    <div>
+      <div class="eyebrow">
+        <span class="eyebrow__line"></span>
+        <span class="label-tech">{{ studio.label }}</span>
+      </div>
+      <h2 class="h2">{{ studio.headline | lines }}</h2>
+      <p class="studio__text">{{ studio.text }}</p>
+      {% if studio.textSecondary %}<p class="studio__text studio__text--muted">{{ studio.textSecondary }}</p>{% endif %}
+      {% if studio.stats and studio.stats.length %}
+      <ul class="stats">
+        {% for stat in studio.stats %}
+        <li>
+          <p class="stats__value">{{ stat.value }}</p>
+          <p class="stats__label">{{ stat.label }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</section>

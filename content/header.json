@@ -1,0 +1,13 @@
+{
+  "logoText": "Apexline",
+  "logoSubtext": "Studio",
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "process": "Process",
+    "studio": "Studio"
+  },
+  "buttonText": "Request a quote",
+  "openMenuLabel": "Open menu",
+  "closeMenuLabel": "Close menu"
+}

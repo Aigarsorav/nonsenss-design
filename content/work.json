@@ -1,0 +1,77 @@
+{
+  "label": "Selected work",
+  "headline": "Wraps, kits\nand printed detail",
+  "allLabel": "All work",
+  "categories": [
+    { "name": "Wraps" },
+    { "name": "Race graphics" },
+    { "name": "Print & decals" }
+  ],
+  "projects": [
+    {
+      "title": "Gate Drop",
+      "subtitle": "KTM 250 SX-F",
+      "year": "2025",
+      "category": "Wraps",
+      "details": "Full plastics wrap · matte laminate",
+      "gallery": [
+        { "image": "/images/work/gate-drop.jpg", "alt": "Gate Drop — KTM 250 SX-F" }
+      ]
+    },
+    {
+      "title": "Airborne",
+      "subtitle": "Husqvarna FC 350",
+      "year": "2025",
+      "category": "Race graphics",
+      "details": "Race kit · number plates · 21 mil vinyl",
+      "gallery": [
+        { "image": "/images/work/airborne.jpg", "alt": "Airborne — Husqvarna FC 350" }
+      ]
+    },
+    {
+      "title": "Satin Split",
+      "subtitle": "Audi RS",
+      "year": "2024",
+      "category": "Wraps",
+      "details": "Colour change wrap · satin grey",
+      "gallery": [
+        { "image": "/images/work/satin-split.jpg", "alt": "Satin Split — Audi RS" }
+      ]
+    },
+    {
+      "title": "Cut Sheet",
+      "subtitle": "Printed decal set",
+      "year": "2025",
+      "category": "Print & decals",
+      "details": "Latex print · contour cut · laminated",
+      "gallery": [
+        { "image": "/images/work/cut-sheet.jpg", "alt": "Cut Sheet — Printed decal set" }
+      ]
+    },
+    {
+      "title": "Team Kit",
+      "subtitle": "Jersey & helmet graphics",
+      "year": "2024",
+      "category": "Race graphics",
+      "details": "Apparel print · heat transfer",
+      "gallery": [
+        { "image": "/images/work/team-kit.jpg", "alt": "Team Kit — Jersey & helmet graphics" }
+      ]
+    },
+    {
+      "title": "Fleet Lines",
+      "subtitle": "Sprinter · commercial",
+      "year": "2024",
+      "category": "Wraps",
+      "details": "Partial wrap · fleet livery",
+      "gallery": [
+        { "image": "/images/work/fleet-lines.jpg", "alt": "Fleet Lines — Sprinter · commercial" }
+      ]
+    }
+  ],
+  "galleryLabel": "Project gallery",
+  "openGalleryLabel": "Open gallery",
+  "previousLabel": "Previous image",
+  "nextLabel": "Next image",
+  "closeLabel": "Close gallery"
+}

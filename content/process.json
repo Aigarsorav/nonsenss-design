@@ -1,0 +1,11 @@
+{
+  "label": "How it runs",
+  "headline": "From brief\nto gate",
+  "intro": "Most graphic kits leave the workshop inside five working days. Wraps are booked into the bay once the proof is signed off.",
+  "steps": [
+    { "title": "Brief", "text": "Send photos of the bike or vehicle and the details of what you're racing or running. We reply with questions and a fixed price." },
+    { "title": "Design", "text": "You get a rendered proof on your own bike. Two rounds of changes are included before anything goes to print." },
+    { "title": "Print", "text": "Latex printed at 1440 dpi on cast vinyl, laminated for fuel and pressure-washer resistance, then contour cut." },
+    { "title": "Apply", "text": "Drop the machine off and we fit it in the bay, or take the kit away with a fitting guide and a squeegee." }
+  ]
+}

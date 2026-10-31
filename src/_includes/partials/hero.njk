@@ -1,0 +1,27 @@
+<section id="top" class="hero">
+  <div class="hero__media">
+    {{ hero.backgroundImage | picture(hero.backgroundAlt, "100vw", { loading: "eager", fetchpriority: "high", class: "hero__img" }) }}
+  </div>
+  <div class="hero__shade hero__shade--v" aria-hidden="true"></div>
+  <div class="hero__shade hero__shade--h" aria-hidden="true"></div>
+  <div class="container hero__content">
+    <div class="eyebrow eyebrow--hero">
+      <span class="eyebrow__line"></span>
+      <span class="label-tech">{{ hero.eyebrow }}</span>
+    </div>
+    <h1 class="hero__title">{{ hero.headline | lines }}<span class="hl"> {{ hero.headlineHighlight | lines }}</span></h1>
+    <p class="hero__intro">{{ hero.intro }}</p>
+    <div class="hero__actions">
+      <a href="#quote" class="btn btn--primary btn--lg">{{ hero.primaryButton }}</a>
+      <a href="#work" class="btn btn--ghost btn--lg">{{ hero.secondaryButton }}</a>
+    </div>
+    <dl class="specs">
+      {% for item in specs.items %}
+      <div class="specs__item">
+        <dt class="label-tech">{{ item.label }}</dt>
+        <dd class="specs__value">{{ item.value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+  </div>
+</section>
