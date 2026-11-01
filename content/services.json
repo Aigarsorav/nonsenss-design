@@ -1,28 +1,47 @@
 {
   "en": {
-    "label": "What we do",
+    "label": "What we do now",
     "headline": "Four ways\nto get kitted",
     "text": "One studio handles the artwork, the print and the fitting. That means no file handoffs, no colour surprises and one person to call when the race is next weekend.",
     "services": [
       {
         "title": "Vehicle wraps",
         "description": "Full colour changes and partial wraps for bikes, cars and vans. Cast vinyl, precision-cut in-house, applied in a dust-controlled bay.",
-        "tags": ["Full wrap", "Partial wrap", "Chrome delete", "PPF"]
+        "tags": [
+          "Full wrap",
+          "Partial wrap",
+          "Chrome delete",
+          "PPF"
+        ]
       },
       {
         "title": "Motocross graphics",
         "description": "Complete kits designed around your bike, your number and your class. Shroud, tank, fender and plate artwork proofed before a single metre is printed.",
-        "tags": ["Full kit", "Number plates", "Series designs", "Spare sets"]
+        "tags": [
+          "Full kit",
+          "Number plates",
+          "Series designs",
+          "Spare sets"
+        ]
       },
       {
         "title": "Large-format printing",
         "description": "Banners, decals, signage, window graphics and apparel transfers. Latex printed, laminated and contour cut — short runs welcome.",
-        "tags": ["Decals", "Banners", "Signage", "Apparel"]
+        "tags": [
+          "Decals",
+          "Banners",
+          "Signage",
+          "Apparel"
+        ]
       },
       {
         "title": "Race team support",
         "description": "Season-long livery programmes with spare sets held on the shelf, so a crash on Saturday never costs you Sunday's gate.",
-        "tags": ["Season livery", "Spares on file", "Pit delivery"]
+        "tags": [
+          "Season livery",
+          "Spares on file",
+          "Pit delivery"
+        ]
       }
     ]
   },
@@ -34,22 +53,41 @@
       {
         "title": "Sõidukikiled",
         "description": "Täielikud värvivahetused ja osalised kiletused mootorratastele, autodele ja kaubikutele. Valatud vinüül, täpselt kohapeal lõigatud ja paigaldatud tolmuvabas boksis.",
-        "tags": ["Täiskile", "Osaline kile", "Chrome delete", "PPF"]
+        "tags": [
+          "Täiskile",
+          "Osaline kile",
+          "Chrome delete",
+          "PPF"
+        ]
       },
       {
         "title": "Motokrossi graafika",
         "description": "Terviklikud komplektid, mis on kujundatud sinu ratta, numbri ja klassi järgi. Katete, paagi, poritiibade ja numbrilaudade kujundus kinnitatakse enne, kui ainsatki meetrit trükitakse.",
-        "tags": ["Täiskomplekt", "Numbrilauad", "Seeriakujundused", "Varukomplektid"]
+        "tags": [
+          "Täiskomplekt",
+          "Numbrilauad",
+          "Seeriakujundused",
+          "Varukomplektid"
+        ]
       },
       {
         "title": "Suurformaattrükk",
         "description": "Bännerid, kleebised, sildid, aknagraafika ja rõivaste siirdetrükid. Lateksiga trükitud, lamineeritud ja kontuurlõikega — ka väikesed tiraažid on teretulnud.",
-        "tags": ["Kleebised", "Bännerid", "Sildid", "Rõivad"]
+        "tags": [
+          "Kleebised",
+          "Bännerid",
+          "Sildid",
+          "Rõivad"
+        ]
       },
       {
         "title": "Võistkonna tugi",
         "description": "Hooajapikkused kujundusprogrammid, kus varukomplektid ootavad riiulil — nii ei maksa laupäevane kukkumine pühapäevast starti.",
-        "tags": ["Hooaja kujundus", "Varud olemas", "Toomine boksi"]
+        "tags": [
+          "Hooaja kujundus",
+          "Varud olemas",
+          "Toomine boksi"
+        ]
       }
     ]
   },
@@ -61,22 +99,41 @@
       {
         "title": "Оклейка авто и мото",
         "description": "Полная смена цвета и частичная оклейка мотоциклов, автомобилей и фургонов. Литой винил, точная резка у нас в студии, установка в боксе без пыли.",
-        "tags": ["Полная оклейка", "Частичная оклейка", "Chrome delete", "PPF"]
+        "tags": [
+          "Полная оклейка",
+          "Частичная оклейка",
+          "Chrome delete",
+          "PPF"
+        ]
       },
       {
         "title": "Графика для мотокросса",
         "description": "Полные комплекты под ваш мотоцикл, номер и класс. Дизайн обтекателей, бака, крыльев и табличек согласуется до того, как напечатан хоть один метр.",
-        "tags": ["Полный комплект", "Номерные таблички", "Серийные дизайны", "Запасные комплекты"]
+        "tags": [
+          "Полный комплект",
+          "Номерные таблички",
+          "Серийные дизайны",
+          "Запасные комплекты"
+        ]
       },
       {
         "title": "Широкоформатная печать",
         "description": "Баннеры, наклейки, вывески, графика на окна и термотрансферы на одежду. Латексная печать, ламинация и контурная резка — небольшие тиражи приветствуются.",
-        "tags": ["Наклейки", "Баннеры", "Вывески", "Одежда"]
+        "tags": [
+          "Наклейки",
+          "Баннеры",
+          "Вывески",
+          "Одежда"
+        ]
       },
       {
         "title": "Поддержка команд",
         "description": "Программы оформления на весь сезон с запасными комплектами на полке — падение в субботу не будет стоить вам старта в воскресенье.",
-        "tags": ["Ливрея на сезон", "Запас на складе", "Доставка в паддок"]
+        "tags": [
+          "Ливрея на сезон",
+          "Запас на складе",
+          "Доставка в паддок"
+        ]
       }
     ]
   }
