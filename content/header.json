@@ -16,7 +16,7 @@
     "buttonText": "Request a quote"
   },
   "et": {
-    "logoSubtext": "Studio",
+    "logoSubtext": "Design",
     "nav": {
       "work": "Tööd",
       "services": "Teenused",
@@ -25,14 +25,14 @@
     },
     "mainNavLabel": "Peamenüü",
     "openMenuLabel": "Ava menüü",
-    "logoText": "Apexline",
+    "logoText": "Nonsenss ",
     "skipLink": "Hüppa sisu juurde",
     "languageLabel": "Keel",
     "closeMenuLabel": "Sulge menüü",
     "buttonText": "Küsi pakkumist"
   },
   "ru": {
-    "logoSubtext": "Studio",
+    "logoSubtext": "Design",
     "nav": {
       "work": "Работы",
       "services": "Услуги",
@@ -41,7 +41,7 @@
     },
     "mainNavLabel": "Главное меню",
     "openMenuLabel": "Открыть меню",
-    "logoText": "Apexline",
+    "logoText": "Nonsenss ",
     "skipLink": "К содержимому",
     "languageLabel": "Язык",
     "closeMenuLabel": "Закрыть меню",
