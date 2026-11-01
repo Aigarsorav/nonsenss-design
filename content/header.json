@@ -1,35 +1,50 @@
 {
   "en": {
-    "logoText": "Apexline",
-    "logoSubtext": "Studio",
-    "nav": { "work": "Work", "services": "Services", "process": "Process", "studio": "Studio" },
-    "buttonText": "Request a quote",
-    "openMenuLabel": "Open menu",
-    "closeMenuLabel": "Close menu",
+    "logoSubtext": "Design",
+    "nav": {
+      "work": "Work",
+      "services": "Services",
+      "process": "Process",
+      "studio": "Studio"
+    },
     "mainNavLabel": "Main",
+    "openMenuLabel": "Open menu",
+    "logoText": "Nonsenss ",
+    "skipLink": "Skip to content",
     "languageLabel": "Language",
-    "skipLink": "Skip to content"
+    "closeMenuLabel": "Close menu",
+    "buttonText": "Request a quote"
   },
   "et": {
-    "logoText": "Apexline",
     "logoSubtext": "Studio",
-    "nav": { "work": "Tööd", "services": "Teenused", "process": "Protsess", "studio": "Stuudio" },
-    "buttonText": "Küsi pakkumist",
-    "openMenuLabel": "Ava menüü",
-    "closeMenuLabel": "Sulge menüü",
+    "nav": {
+      "work": "Tööd",
+      "services": "Teenused",
+      "process": "Protsess",
+      "studio": "Stuudio"
+    },
     "mainNavLabel": "Peamenüü",
+    "openMenuLabel": "Ava menüü",
+    "logoText": "Apexline",
+    "skipLink": "Hüppa sisu juurde",
     "languageLabel": "Keel",
-    "skipLink": "Hüppa sisu juurde"
+    "closeMenuLabel": "Sulge menüü",
+    "buttonText": "Küsi pakkumist"
   },
   "ru": {
-    "logoText": "Apexline",
     "logoSubtext": "Studio",
-    "nav": { "work": "Работы", "services": "Услуги", "process": "Процесс", "studio": "Студия" },
-    "buttonText": "Запросить расчёт",
-    "openMenuLabel": "Открыть меню",
-    "closeMenuLabel": "Закрыть меню",
+    "nav": {
+      "work": "Работы",
+      "services": "Услуги",
+      "process": "Процесс",
+      "studio": "Студия"
+    },
     "mainNavLabel": "Главное меню",
+    "openMenuLabel": "Открыть меню",
+    "logoText": "Apexline",
+    "skipLink": "К содержимому",
     "languageLabel": "Язык",
-    "skipLink": "К содержимому"
+    "closeMenuLabel": "Закрыть меню",
+    "buttonText": "Запросить расчёт"
   }
 }
