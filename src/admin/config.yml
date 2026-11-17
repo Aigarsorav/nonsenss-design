@@ -57,8 +57,36 @@ collections:
         file: content/header.json
         i18n: true
         fields:
-          - { label: "Logo text", name: logoText, widget: string, i18n: true, hint: "The big word in the top-left corner." }
+          - { label: "Logo text", name: logoText, widget: string, i18n: true, hint: "The big word in the top-left corner. Shown when 'Logo display' is 'Text only' or 'Logo + text'." }
           - { label: "Logo small text", name: logoSubtext, widget: string, required: false, i18n: true, hint: "Small word next to the logo (hidden on phones)." }
+          - label: "Logo image"
+            name: logoImage
+            widget: image
+            required: false
+            choose_url: false
+            i18n: duplicate
+            pattern: ['\.([sS][vV][gG]|[pP][nN][gG]|[wW][eE][bB][pP])$', "Use an SVG, PNG or WebP file"]
+            hint: "Optional. Upload a light-coloured or white logo — the header is dark. SVG is best (always sharp); PNG or WebP also work — use a transparent background, no box around the logo. A wide, horizontal logo fits best: it is scaled down automatically to the header height (about 30 px tall), so crop away empty space around it. Same logo for every language. Nothing changes on the site until 'Logo display' below is set to show it."
+          - label: "Logo display"
+            name: logoDisplay
+            widget: select
+            default: text
+            i18n: duplicate
+            options:
+              - { label: "Text only", value: text }
+              - { label: "Logo only", value: logo }
+              - { label: "Logo + text", value: both }
+            hint: "What the top-left corner shows, on computers and phones. 'Logo only' and 'Logo + text' need a logo image above — without one the text is shown. With 'Logo + text' keep the logo compact (a symbol or badge), as the words sit right next to it. Same for every language."
+          - { label: "Logo description (alt text)", name: logoAlt, widget: string, i18n: true, hint: "Read aloud by screen readers and shown if the image can't load — normally just the company name, e.g. Nonsenss Design. Don't write 'logo of…'. Written per language." }
+          - { label: "Use the logo in the footer", name: logoInFooter, widget: boolean, default: false, required: false, i18n: duplicate, hint: "Switch on to show the logo image at the bottom of the page instead of the footer brand name. The footer is dark too, so the same light logo works. Needs a logo image above." }
+          - label: "Favicon (browser tab icon)"
+            name: favicon
+            widget: image
+            required: false
+            choose_url: false
+            i18n: duplicate
+            pattern: ['\.([sS][vV][gG]|[pP][nN][gG]|[wW][eE][bB][pP])$', "Use an SVG, PNG or WebP file"]
+            hint: "Optional. The tiny icon in the browser tab and bookmarks. Square SVG or PNG, at least 192×192 px; a simple symbol reads better than the full logo at this size. Leave empty to keep the current icon. Browsers cache this icon, so a change can take a while to show up."
           - label: "Menu labels"
             name: nav
             widget: object

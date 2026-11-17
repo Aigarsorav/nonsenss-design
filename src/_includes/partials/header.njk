@@ -1,4 +1,7 @@
 {% set h = t.header %}
+{# Logo modes: text (default) · logo · both. Without a usable image every mode falls back to text. #}
+{% set logo = h.logoImage | brandImage %}
+{% set logoMode = h.logoDisplay if logo and h.logoDisplay in ["logo", "both"] else "text" %}
 {% macro langSwitch(class) %}
 <nav class="lang {{ class }}" aria-label="{{ h.languageLabel }}">
   {% for l in locales %}
@@ -10,9 +13,17 @@
   <div class="progress" aria-hidden="true"><div class="progress__bar" data-progress></div></div>
   <div class="site-header__bar">
     <div class="container site-header__inner">
-      <a href="{{ locale.url }}#top" class="logo">
-        <span class="logo__text">{{ h.logoText }}</span>
-        <span class="logo__sub">{{ h.logoSubtext }}</span>
+      <a href="{{ locale.url }}#top" class="logo logo--{{ logoMode }}">
+        {% if logoMode != "text" %}
+        {# Next to the text logo the image is decorative; on its own it carries the name. #}
+        <img class="logo__img" src="{{ logo.url }}" width="{{ logo.width }}" height="{{ logo.height }}" alt="{{ h.logoAlt if logoMode == 'logo' else '' }}" decoding="async">
+        {% endif %}
+        {% if logoMode != "logo" %}
+        <span class="logo__words">
+          <span class="logo__text">{{ h.logoText }}</span>
+          <span class="logo__sub">{{ h.logoSubtext }}</span>
+        </span>
+        {% endif %}
       </a>
       <nav class="nav" aria-label="{{ h.mainNavLabel }}">
         <a href="#work" class="nav__link">{{ h.nav.work }}</a>

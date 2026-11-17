@@ -13,7 +13,12 @@
     "skipLink": "Skip to content",
     "languageLabel": "Language",
     "closeMenuLabel": "Close menu",
-    "buttonText": "Request a quote"
+    "buttonText": "Request a quote",
+    "logoImage": "",
+    "logoDisplay": "text",
+    "logoAlt": "Nonsenss Design",
+    "logoInFooter": false,
+    "favicon": ""
   },
   "et": {
     "logoSubtext": "Disain",
@@ -29,7 +34,12 @@
     "skipLink": "Hüppa sisu juurde",
     "languageLabel": "Keel",
     "closeMenuLabel": "Sulge menüü",
-    "buttonText": "Küsi pakkumist"
+    "buttonText": "Küsi pakkumist",
+    "logoImage": "",
+    "logoDisplay": "text",
+    "logoAlt": "Nonsenss Disain",
+    "logoInFooter": false,
+    "favicon": ""
   },
   "ru": {
     "logoSubtext": "Design",
@@ -45,6 +55,11 @@
     "skipLink": "К содержимому",
     "languageLabel": "Язык",
     "closeMenuLabel": "Закрыть меню",
-    "buttonText": "Запросить расчёт"
+    "buttonText": "Запросить расчёт",
+    "logoImage": "",
+    "logoDisplay": "text",
+    "logoAlt": "Nonsenss Design",
+    "logoInFooter": false,
+    "favicon": ""
   }
 }

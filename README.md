@@ -77,6 +77,7 @@ Notes for editors:
 - **Work → Filter categories** can be added, renamed, removed and reordered. "All work" is always the first filter. Each category has a short technical ID (e.g. `wraps`) that projects point to — keep IDs stable; rename the names freely.
 - **Work → Projects**: the first gallery photo is the card cover. Drag the handle to reorder projects or gallery photos.
 - Headline fields: press Enter to force a line break. The lime-coloured part of the hero headline is its own field.
+- **Header & menu → Logo image / Logo display**: upload an SVG, PNG or WebP logo (light-coloured, transparent background — the header and footer are dark) and choose *Text only* (default), *Logo only* or *Logo + text*. The logo is scaled to the header height (28 px on phones, 34 px on desktop) whatever size is uploaded. *Use the logo in the footer* swaps the footer brand name for the same image, and *Favicon* replaces the browser-tab icon. Logo, display mode and favicon are shared by all languages; the logo description (alt text) is per language.
 
 ### 4. Languages
 

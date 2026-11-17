@@ -7,7 +7,10 @@ const SECTIONS = ["settings", "header", "hero", "specs", "marquee", "work", "ser
 // Lists that are deliberately shared across languages (edited in the EN column of the CMS,
 // with per-language sub-fields inside). Always read from `en`, even if the CMS has left a
 // copy under another locale.
-const SHARED = { work: ["categories", "projects"] };
+const SHARED = {
+  work: ["categories", "projects"],
+  header: ["logoImage", "logoDisplay", "logoInFooter", "favicon"],
+};
 
 const locales = [
   { code: "en", label: "EN", name: "English", url: "/" },

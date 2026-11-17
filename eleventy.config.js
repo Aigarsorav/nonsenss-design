@@ -13,15 +13,58 @@ const IMAGE_PATTERN = /^\/?images\/.+\.(jpe?g|png|webp|avif|gif|tiff?)$/i;
 // Metadata for every image referenced in /content, keyed by its content path.
 const imageMeta = new Map();
 
+// Logo and favicon (content/header.json). They keep their transparency and vector format,
+// so they skip the photo pipeline above and get their own small one below.
+const BRAND_KEYS = new Set(["logoImage", "favicon"]);
+const BRAND_PATTERN = /^\/?images\/.+\.(svg|png|webp)$/i;
+const BRAND_OUTPUT = {
+  logoImage: { width: 640, format: "webp" }, // shown at most ~40px tall; 640px wide covers retina for any sane logo
+  favicon: { width: 192, format: "png" },
+};
+const brandMeta = new Map();
+
 function collectImagePaths(value, found = new Set()) {
   if (typeof value === "string") {
     if (IMAGE_PATTERN.test(value)) found.add(value);
   } else if (Array.isArray(value)) {
     value.forEach((v) => collectImagePaths(v, found));
   } else if (value && typeof value === "object") {
-    Object.values(value).forEach((v) => collectImagePaths(v, found));
+    for (const [k, v] of Object.entries(value)) {
+      if (!BRAND_KEYS.has(k)) collectImagePaths(v, found);
+    }
   }
   return found;
+}
+
+async function processBrandImages() {
+  brandMeta.clear();
+  const headerFile = path.join(CONTENT_DIR, "header.json");
+  if (!fs.existsSync(headerFile)) return;
+  const header = JSON.parse(fs.readFileSync(headerFile, "utf8")).en || {};
+  for (const key of BRAND_KEYS) {
+    const src = header[key];
+    if (!src) continue;
+    const file = String(src).replace(/^\//, "");
+    if (!BRAND_PATTERN.test(src) || !fs.existsSync(file)) {
+      console.warn(`[images] ${key}: "${src}" is missing or not an SVG/PNG/WebP file — ignored.`);
+      continue;
+    }
+    const isSvg = /\.svg$/i.test(file);
+    try {
+      const meta = await Image(file, {
+        widths: [isSvg ? "auto" : BRAND_OUTPUT[key].width],
+        formats: [isSvg ? "svg" : BRAND_OUTPUT[key].format],
+        outputDir: "_site/img/",
+        urlPath: "/img/",
+        filenameFormat: (id, srcPath, width, format) =>
+          `${path.basename(srcPath, path.extname(srcPath))}-${id.slice(0, 6)}${isSvg ? "" : "-" + width}.${format}`,
+      });
+      const out = Object.values(meta)[0][0];
+      brandMeta.set(src, { url: out.url, width: out.width, height: out.height, type: out.sourceType });
+    } catch (err) {
+      console.warn(`[images] ${key}: could not read "${src}" (${err.message}) — ignored.`);
+    }
+  }
 }
 
 async function processContentImages() {
@@ -76,7 +119,7 @@ export default function (eleventyConfig) {
 
   // Every JSON file in /content becomes a global data object named after the file.
   eleventyConfig.addGlobalData("images", async () => {
-    await processContentImages();
+    await Promise.all([processContentImages(), processBrandImages()]);
     return true;
   });
 
@@ -134,6 +177,10 @@ export default function (eleventyConfig) {
     const img = `<img src="${fallback.url}" srcset="${meta.jpeg.map((m) => m.srcset).join(", ")}" sizes="${sizes}" width="${fallback.width}" height="${fallback.height}" alt="${escapeHtml(alt)}" ${extra}>`;
     return safe(`<picture>${sources}${img}</picture>`);
   });
+
+  // Logo / favicon: `{ url, width, height, type }`, or nothing when no usable file is set
+  // (templates then fall back to the text logo / default favicon).
+  eleventyConfig.addFilter("brandImage", (src) => (src && brandMeta.get(src)) || null);
 
   // Data for the lightbox: one webp srcset + jpeg fallback per gallery image.
   eleventyConfig.addFilter("galleryData", (gallery = []) =>

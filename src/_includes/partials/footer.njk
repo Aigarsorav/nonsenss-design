@@ -2,7 +2,12 @@
   <div class="container footer__inner">
     <div class="footer__grid">
       <div>
+        {% set footerLogo = (t.header.logoImage | brandImage) if t.header.logoInFooter else null %}
+        {% if footerLogo %}
+        <p class="footer__brand footer__brand--logo"><img class="footer__logo" src="{{ footerLogo.url }}" width="{{ footerLogo.width }}" height="{{ footerLogo.height }}" alt="{{ t.header.logoAlt or t.footer.brand }}" loading="lazy" decoding="async"></p>
+        {% else %}
         <p class="footer__brand">{{ t.footer.brand }}</p>
+        {% endif %}
         <p class="footer__desc">{{ t.footer.description }}</p>
       </div>
       <div>

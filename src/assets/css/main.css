@@ -127,7 +127,11 @@ ul, ol { list-style: none; }
   -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
 }
 .site-header__inner { display: flex; height: 64px; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: baseline; gap: 8px; }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo__words { display: flex; align-items: baseline; gap: 8px; }
+/* Uploaded logo: fixed height, natural width, capped so a very wide file can't push the menu out. */
+.logo__img { display: block; flex: none; height: 28px; width: auto; max-width: min(200px, 52vw); object-fit: contain; object-position: left center; }
+.logo--both .logo__img { max-width: min(120px, 32vw); }
 .logo__text { font-size: 18px; line-height: 28px; font-weight: 800; text-transform: uppercase; }
 .logo__sub { display: none; font-size: 10px; line-height: 15px; text-transform: uppercase; letter-spacing: .3em; color: var(--muted-fg); }
 .nav { display: none; align-items: center; gap: 32px; }
@@ -375,6 +379,8 @@ fieldset.field { border: 0; }
 .footer__inner { padding-block: 64px; }
 .footer__grid { display: grid; gap: 40px; }
 .footer__brand { font-size: 30px; line-height: 1; font-weight: 800; text-transform: uppercase; }
+.footer__brand--logo { line-height: 0; }
+.footer__logo { display: block; height: 40px; width: auto; max-width: min(240px, 100%); object-fit: contain; object-position: left center; }
 .footer__desc { margin-top: 16px; max-width: 320px; font-size: 12px; line-height: 1.9; color: var(--muted-fg); }
 .footer__list { margin-top: 16px; display: grid; gap: 8px; font-size: 14px; line-height: 20px; }
 .footer__list a { color: hsl(var(--fg-a) / .8); transition: color .15s var(--ease); }
@@ -461,11 +467,16 @@ fieldset.field { border: 0; }
 }
 @media (min-width: 768px) {
   .nav { display: flex; }
+  /* The full menu is tight until ~1280px: keep the logo within the text logo's footprint. */
+  .logo__img { height: 34px; max-width: 180px; }
+  .logo--both .logo__img { max-width: 48px; }
+  .logo--both .logo__sub { display: none; }
   .menu-toggle, .mobile-menu { display: none !important; }
   .work__head { flex-direction: row; align-items: flex-end; justify-content: space-between; }
   .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (min-width: 1024px) {
+  .logo__img { max-width: 260px; }
   .hero__title { font-size: 72px; }
   .h2--xl { font-size: 60px; }
   .work__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -480,4 +491,8 @@ fieldset.field { border: 0; }
   html { scroll-behavior: auto; }
   .marquee__track { animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; }
+}
+@media (min-width: 1280px) {
+  .logo--both .logo__img { max-width: 180px; }
+  .logo--both .logo__sub { display: inline; }
 }
