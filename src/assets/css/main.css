@@ -131,7 +131,7 @@ ul, ol { list-style: none; }
 .logo__words { display: flex; align-items: baseline; gap: 8px; }
 /* Uploaded logo: fixed height, natural width, capped so a very wide file can't push the menu out. */
 .logo__img { display: block; flex: none; height: 28px; width: auto; max-width: min(200px, 52vw); object-fit: contain; object-position: left center; }
-.logo--both .logo__img { max-width: min(120px, 32vw); }
+.logo--both .logo__img { max-width: min(120px, 24vw); }
 .logo__text { font-size: 18px; line-height: 28px; font-weight: 800; text-transform: uppercase; }
 .logo__sub { display: none; font-size: 10px; line-height: 15px; text-transform: uppercase; letter-spacing: .3em; color: var(--muted-fg); }
 .nav { display: none; align-items: center; gap: 32px; }
@@ -466,17 +466,24 @@ fieldset.field { border: 0; }
   .lightbox__nav--next { left: auto; right: 24px; }
 }
 @media (min-width: 768px) {
-  .nav { display: flex; }
-  /* The full menu is tight until ~1280px: keep the logo within the text logo's footprint. */
-  .logo__img { height: 34px; max-width: 180px; }
-  .logo--both .logo__img { max-width: 48px; }
-  .logo--both .logo__sub { display: none; }
-  .menu-toggle, .mobile-menu { display: none !important; }
+  .logo__img { height: 34px; max-width: 260px; }
+  .logo--both .logo__img { max-width: 180px; }
   .work__head { flex-direction: row; align-items: flex-end; justify-content: space-between; }
   .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+/* Full menu instead of the hamburger. The menu (4 links + languages + button) is ~650px in the
+   widest language and the text logo ~190px, so with gutters it needs ~940px. Keep in sync with
+   NAV_BREAKPOINT in main.js. Until 1280px an uploaded logo is capped to the text logo's footprint. */
+@media (min-width: 960px) {
+  .nav { display: flex; }
+  .menu-toggle, .mobile-menu { display: none !important; }
+  .logo__img { max-width: 180px; }
+  .logo--both .logo__img { max-width: 48px; }
+  .logo--both .logo__sub { display: none; }
+}
 @media (min-width: 1024px) {
   .logo__img { max-width: 260px; }
+  .logo--both .logo__img { max-width: 100px; }
   .hero__title { font-size: 72px; }
   .h2--xl { font-size: 60px; }
   .work__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }

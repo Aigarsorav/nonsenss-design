@@ -44,7 +44,8 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && menuOpen) { setMenu(false); toggle.focus(); }
   });
-  window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
+  // Same breakpoint as the full-menu media query in main.css.
+  window.matchMedia("(min-width: 960px)").addEventListener("change", (e) => { if (e.matches) setMenu(false); });
 
   /* ---------- Work filters (FLIP transition) ---------- */
   const grid = $("[data-grid]");
