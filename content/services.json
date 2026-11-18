@@ -5,7 +5,7 @@
     "text": "One studio handles the artwork, the print and the fitting. That means no file handoffs, no colour surprises and one person to call when the race is next weekend.",
     "services": [
       {
-        "title": "Vehicle wraps",
+        "title": "Vehicle Graphics & Wrap Design",
         "description": "Full colour changes and partial wraps for bikes, cars and vans. Cast vinyl, precision-cut in-house, applied in a dust-controlled bay.",
         "tags": [
           "Full wrap",
@@ -15,8 +15,8 @@
         ]
       },
       {
-        "title": "Motocross graphics",
-        "description": "Complete kits designed around your bike, your number and your class. Shroud, tank, fender and plate artwork proofed before a single metre is printed.",
+        "title": "Motocross & Powersport Graphics",
+        "description": "Complete kits designed for you. Dirt bikes, quads, sidecars, snowmobiles & jetskis. ",
         "tags": [
           "Full kit",
           "Number plates",
@@ -25,8 +25,8 @@
         ]
       },
       {
-        "title": "Large-format printing",
-        "description": "Banners, decals, signage, window graphics and apparel transfers. Latex printed, laminated and contour cut — short runs welcome.",
+        "title": "Racewear design & production",
+        "description": "Custom motocross jerseys, teamwear and apparel design.",
         "tags": [
           "Decals",
           "Banners",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "title": "Race team support",
+        "title": "Motorsport helmet design",
         "description": "Season-long livery programmes with spare sets held on the shelf, so a crash on Saturday never costs you Sunday's gate.",
         "tags": [
           "Season livery",
