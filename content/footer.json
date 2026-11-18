@@ -1,53 +1,77 @@
 {
   "en": {
-    "brand": "Apexline",
-    "description": "Wrap · Print · Race Graphics. Workshop and print floor in Tallinn, Estonia. Kits shipped across Europe.",
-    "contactLabel": "Contact",
-    "email": "studio@apexline.example",
-    "phone": "+000 000 0000",
-    "hours": "Mon–Fri 09:00–18:00",
-    "elsewhereLabel": "Elsewhere",
     "instagramLabel": "Instagram",
-    "instagramUrl": "https://instagram.com",
+    "elsewhereLabel": "Elsewhere",
+    "brand": "Apexline",
+    "copyright": "© 2026 Nonsenss Design",
+    "phone": "+372 52 98 424",
+    "tagline": "Designed, printed, applied locally",
+    "hours": "Mon–Fri 09:00–18:00",
+    "contactLabel": "Contact",
     "links": [
-      { "label": "Request a quote", "url": "#quote", "muted": false },
-      { "label": "Studio login", "url": "/admin/", "muted": true }
+      {
+        "label": "Request a quote",
+        "url": "#quote",
+        "muted": false
+      },
+      {
+        "label": "Studio login",
+        "url": "/admin/",
+        "muted": true
+      }
     ],
-    "copyright": "© 2026 Apexline Studio",
-    "tagline": "Designed, printed, applied locally"
+    "email": "info@nonsenss.com",
+    "description": "Wrap · Print · Race Graphics. Workshop and print floor in Tallinn, Estonia. Kits shipped across Europe.",
+    "instagramUrl": "https://www.instagram.com/nonsenssdesign"
   },
   "et": {
-    "brand": "Apexline",
-    "description": "Kiled · Trükk · Võistlusgraafika. Töökoda ja trükisaal Tallinnas. Komplektid saadetakse üle Euroopa.",
-    "contactLabel": "Kontakt",
-    "email": "studio@apexline.example",
-    "phone": "+000 000 0000",
-    "hours": "E–R 09:00–18:00",
-    "elsewhereLabel": "Mujal",
     "instagramLabel": "Instagram",
-    "instagramUrl": "https://instagram.com",
+    "elsewhereLabel": "Mujal",
+    "brand": "Apexline",
+    "copyright": "© 2026 Nonsenss Design",
+    "phone": "+372 52 98 424",
+    "tagline": "Kujundatud, trükitud ja paigaldatud kohapeal",
+    "hours": "E–R 09:00–18:00",
+    "contactLabel": "Kontakt",
     "links": [
-      { "label": "Küsi pakkumist", "url": "#quote", "muted": false },
-      { "label": "Stuudio sisselogimine", "url": "/admin/", "muted": true }
+      {
+        "label": "Küsi pakkumist",
+        "url": "#quote",
+        "muted": false
+      },
+      {
+        "label": "Stuudio sisselogimine",
+        "url": "/admin/",
+        "muted": true
+      }
     ],
-    "copyright": "© 2026 Apexline Studio",
-    "tagline": "Kujundatud, trükitud ja paigaldatud kohapeal"
+    "email": "info@nonsenss.com",
+    "description": "Kiled · Trükk · Võistlusgraafika. Töökoda ja trükisaal Tallinnas. Komplektid saadetakse üle Euroopa.",
+    "instagramUrl": "https://www.instagram.com/nonsenssdesign"
   },
   "ru": {
-    "brand": "Apexline",
-    "description": "Оклейка · Печать · Гоночная графика. Мастерская и печатный цех в Таллине, Эстония. Комплекты отправляем по всей Европе.",
-    "contactLabel": "Контакты",
-    "email": "studio@apexline.example",
-    "phone": "+000 000 0000",
-    "hours": "Пн–Пт 09:00–18:00",
-    "elsewhereLabel": "Мы в сети",
     "instagramLabel": "Instagram",
-    "instagramUrl": "https://instagram.com",
-    "links": [
-      { "label": "Запросить расчёт", "url": "#quote", "muted": false },
-      { "label": "Вход для студии", "url": "/admin/", "muted": true }
-    ],
+    "elsewhereLabel": "Мы в сети",
+    "brand": "Apexline",
     "copyright": "© 2026 Apexline Studio",
-    "tagline": "Дизайн, печать и установка — всё на месте"
+    "phone": "+372 52 98 424",
+    "tagline": "Дизайн, печать и установка — всё на месте",
+    "hours": "Пн–Пт 09:00–18:00",
+    "contactLabel": "Контакты",
+    "links": [
+      {
+        "label": "Запросить расчёт",
+        "url": "#quote",
+        "muted": false
+      },
+      {
+        "label": "Вход для студии",
+        "url": "/admin/",
+        "muted": true
+      }
+    ],
+    "email": "info@nonsenss.com",
+    "description": "Оклейка · Печать · Гоночная графика. Мастерская и печатный цех в Таллине, Эстония. Комплекты отправляем по всей Европе.",
+    "instagramUrl": "https://www.instagram.com/nonsenssdesign"
   }
 }
