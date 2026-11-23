@@ -48,7 +48,7 @@ collections:
         fields:
           - { label: "Browser tab / search title", name: siteTitle, widget: string, i18n: true, hint: "Shown in the browser tab and as the headline in Google results." }
           - { label: "Search description", name: siteDescription, widget: text, i18n: true, hint: "One or two sentences shown under the title in Google and when the link is shared." }
-          - { label: "Site address", name: siteUrl, widget: string, i18n: duplicate, hint: "The full public address, e.g. https://apexline.ee — no trailing slash. Same for every language." }
+          - { label: "Site address", name: siteUrl, widget: string, i18n: duplicate, hint: "The full public address, e.g. https://nonsenss.com — no trailing slash. Used for the canonical, language (hreflang) and social-share links. Same for every language." }
           - { label: "Share image", name: shareImage, widget: image, required: false, i18n: duplicate, hint: "Picture shown when the link is shared on social media or in chats. Landscape, about 1200×630." }
 
       # ------------------------------------------------------------ Header
@@ -392,7 +392,7 @@ collections:
           - { label: "Show the 'Elsewhere' column", name: showElsewhere, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the whole links column (Instagram and other links) in the footer. Same for every language." }
           - { label: "Links column — heading", name: elsewhereLabel, widget: string, i18n: true }
           - { label: "Instagram — link text", name: instagramLabel, widget: string, i18n: true }
-          - { label: "Instagram — address", name: instagramUrl, widget: string, required: false, i18n: duplicate, hint: "Full address, e.g. https://instagram.com/apexline. Leave empty to hide. Same for every language." }
+          - { label: "Instagram — address", name: instagramUrl, widget: string, required: false, i18n: duplicate, hint: "Full address, e.g. https://www.instagram.com/nonsenssdesign. Leave empty to hide. Same for every language." }
           - label: "Other links"
             name: links
             widget: list

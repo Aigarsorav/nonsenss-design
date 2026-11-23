@@ -8,6 +8,7 @@ const SECTIONS = ["settings", "header", "hero", "specs", "marquee", "work", "ser
 // with per-language sub-fields inside). Always read from `en`, even if the CMS has left a
 // copy under another locale.
 const SHARED = {
+  settings: ["siteUrl"],
   header: ["logoImage", "logoDisplay", "logoInFooter", "favicon"],
   hero: ["showSpecs"],
   marquee: ["showSection"],
@@ -15,7 +16,7 @@ const SHARED = {
   services: ["showSection"],
   process: ["showSection"],
   studio: ["showSection"],
-  quote: ["showSection"],
+  quote: ["showSection", "directEmail"],
   footer: ["showElsewhere"],
 };
 
@@ -67,6 +68,8 @@ export default {
         out[key] = merge(en, file[code]);
         for (const shared of SHARED[key] || []) out[key][shared] = en[shared];
       }
+      // Used for canonical, hreflang and Open Graph URLs; an editor may type a trailing slash.
+      out.settings.siteUrl = String(out.settings.siteUrl || "").replace(/\/+$/, "");
       return out;
     },
   },

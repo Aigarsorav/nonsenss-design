@@ -94,7 +94,7 @@ Under the hood each `content/*.json` file is `{ "en": {…}, "et": {…}, "ru": 
 
 ## Custom domain
 
-1. Netlify: **Domain management → Add a domain**, enter e.g. `apexline.ee`.
+1. Netlify: **Domain management → Add a domain**, enter e.g. `nonsenss.com`.
 2. Either move the domain's nameservers to Netlify DNS (shown in the wizard), or at your registrar add:
    - `A` record for the apex (`@`) → `75.2.60.5`
    - `CNAME` for `www` → `<your-site>.netlify.app`
