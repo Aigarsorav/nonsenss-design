@@ -2,7 +2,7 @@
   "name": "nonsenss-design",
   "version": "1.0.0",
   "private": true,
-  "description": "Apexline Studio — static site (Eleventy) with Decap CMS",
+  "description": "Nonsenss — static site (Eleventy) with Decap CMS",
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",

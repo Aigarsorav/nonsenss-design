@@ -1,4 +1,4 @@
-# Apexline Studio — website
+# Nonsenss — website
 
 Single-page static site built with [Eleventy](https://www.11ty.dev/) (vanilla CSS + vanilla JS, no frameworks), hosted on Netlify, edited through [Decap CMS](https://decapcms.org/) at `/admin`.
 
@@ -52,7 +52,7 @@ The editor lives at `https://<your-site>/admin/`. Editors log in with their GitH
 Decap uses Netlify as the OAuth broker for GitHub (not Netlify Identity).
 
 1. On GitHub: **Settings → Developer settings → OAuth Apps → New OAuth App**
-   - Application name: anything, e.g. `Apexline CMS`
+   - Application name: anything, e.g. `Nonsenss CMS`
    - Homepage URL: your site URL
    - Authorization callback URL: `https://api.netlify.com/auth/done`
    - Register, then generate a **client secret**.

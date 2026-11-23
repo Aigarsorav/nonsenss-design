@@ -17,7 +17,7 @@
     "skipLink": "Skip to content",
     "languageLabel": "Language",
     "closeMenuLabel": "Close menu",
-    "logoAlt": "Nonsenss Design",
+    "logoAlt": "",
     "buttonText": "Request a quote"
   },
   "et": {
@@ -38,7 +38,7 @@
     "skipLink": "Hüppa sisu juurde",
     "languageLabel": "Keel",
     "closeMenuLabel": "Sulge menüü",
-    "logoAlt": "Nonsenss Disain",
+    "logoAlt": "",
     "buttonText": "Küsi pakkumist"
   },
   "ru": {
@@ -59,7 +59,7 @@
     "skipLink": "К содержимому",
     "languageLabel": "Язык",
     "closeMenuLabel": "Закрыть меню",
-    "logoAlt": "Nonsenss Design",
+    "logoAlt": "",
     "buttonText": "Запросить расчёт"
   }
 }

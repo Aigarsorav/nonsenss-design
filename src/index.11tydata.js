@@ -8,7 +8,7 @@ const SECTIONS = ["settings", "header", "hero", "specs", "marquee", "work", "ser
 // with per-language sub-fields inside). Always read from `en`, even if the CMS has left a
 // copy under another locale.
 const SHARED = {
-  settings: ["siteUrl"],
+  settings: ["siteName", "siteUrl"],
   header: ["logoImage", "logoDisplay", "logoInFooter", "favicon"],
   hero: ["showSpecs"],
   marquee: ["showSection"],
@@ -52,6 +52,7 @@ export default {
   pagination: { data: "locales", size: 1, alias: "locale" },
   eleventyComputed: {
     lang: (data) => data.locale.code,
+    year: () => new Date().getFullYear(),
     show: (data) => {
       const out = { elsewhere: isOn(data, "footer", "showElsewhere") };
       for (const key of TOGGLED) out[key] = isOn(data, key, "showSection");
@@ -70,6 +71,8 @@ export default {
       }
       // Used for canonical, hreflang and Open Graph URLs; an editor may type a trailing slash.
       out.settings.siteUrl = String(out.settings.siteUrl || "").replace(/\/+$/, "");
+      // The one brand name (Site settings → Site/brand name), shared by every language.
+      out.settings.siteName = String(out.settings.siteName || "").trim();
       return out;
     },
   },

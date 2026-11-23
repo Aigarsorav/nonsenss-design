@@ -4,9 +4,9 @@
       <div>
         {% set footerLogo = (t.header.logoImage | brandImage) if t.header.logoInFooter else null %}
         {% if footerLogo %}
-        <p class="footer__brand footer__brand--logo"><img class="footer__logo" src="{{ footerLogo.url }}" width="{{ footerLogo.width }}" height="{{ footerLogo.height }}" alt="{{ t.header.logoAlt or t.footer.brand }}" loading="lazy" decoding="async"></p>
+        <p class="footer__brand footer__brand--logo"><img class="footer__logo" src="{{ footerLogo.url }}" width="{{ footerLogo.width }}" height="{{ footerLogo.height }}" alt="{{ t.header.logoAlt or t.settings.siteName }}" loading="lazy" decoding="async"></p>
         {% else %}
-        <p class="footer__brand">{{ t.footer.brand }}</p>
+        <p class="footer__brand">{{ t.settings.siteName }}</p>
         {% endif %}
         <p class="footer__desc">{{ t.footer.description }}</p>
       </div>
@@ -39,7 +39,7 @@
       {% endif %}
     </div>
     <div class="footer__bottom">
-      <span>{{ t.footer.copyright }}</span>
+      <span>© {{ year }} {{ t.settings.siteName }}</span>
       <span>{{ t.footer.tagline }}</span>
     </div>
   </div>

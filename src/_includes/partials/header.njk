@@ -1,4 +1,5 @@
 {% set h = t.header %}
+{% set brandName = t.settings.siteName %}
 {# Logo modes: text (default) · logo · both. Without a usable image every mode falls back to text. #}
 {% set logo = h.logoImage | brandImage %}
 {% set logoMode = h.logoDisplay if logo and h.logoDisplay in ["logo", "both"] else "text" %}
@@ -16,11 +17,11 @@
       <a href="{{ locale.url }}#top" class="logo logo--{{ logoMode }}">
         {% if logoMode != "text" %}
         {# Next to the text logo the image is decorative; on its own it carries the name. #}
-        <img class="logo__img" src="{{ logo.url }}" width="{{ logo.width }}" height="{{ logo.height }}" alt="{{ h.logoAlt if logoMode == 'logo' else '' }}" decoding="async">
+        <img class="logo__img" src="{{ logo.url }}" width="{{ logo.width }}" height="{{ logo.height }}" alt="{{ (h.logoAlt or brandName) if logoMode == 'logo' else '' }}" decoding="async">
         {% endif %}
         {% if logoMode != "logo" %}
         <span class="logo__words">
-          <span class="logo__text">{{ h.logoText }}</span>
+          <span class="logo__text">{{ h.logoText or brandName }}</span>
           <span class="logo__sub">{{ h.logoSubtext }}</span>
         </span>
         {% endif %}

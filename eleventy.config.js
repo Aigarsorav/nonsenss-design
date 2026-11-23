@@ -125,8 +125,8 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ images: "images" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
-  eleventyConfig.ignores.add("src/admin/**");
+  // /admin/index.njk is a template (its <title> uses the brand-name setting); the CMS config is copied as is.
+  eleventyConfig.addPassthroughCopy({ "src/admin/config.yml": "admin/config.yml" });
   eleventyConfig.addWatchTarget("./content/");
   eleventyConfig.addWatchTarget("./src/assets/");
 
