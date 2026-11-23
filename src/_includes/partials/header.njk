@@ -26,12 +26,12 @@
         {% endif %}
       </a>
       <nav class="nav" aria-label="{{ h.mainNavLabel }}">
-        <a href="#work" class="nav__link">{{ h.nav.work }}</a>
-        <a href="#services" class="nav__link">{{ h.nav.services }}</a>
-        <a href="#process" class="nav__link">{{ h.nav.process }}</a>
-        <a href="#studio" class="nav__link">{{ h.nav.studio }}</a>
+        {% if show.work %}<a href="#work" class="nav__link">{{ h.nav.work }}</a>{% endif %}
+        {% if show.services %}<a href="#services" class="nav__link">{{ h.nav.services }}</a>{% endif %}
+        {% if show.process %}<a href="#process" class="nav__link">{{ h.nav.process }}</a>{% endif %}
+        {% if show.studio %}<a href="#studio" class="nav__link">{{ h.nav.studio }}</a>{% endif %}
         {{ langSwitch("lang--nav") }}
-        <a href="#quote" class="btn btn--primary btn--nav">{{ h.buttonText }}</a>
+        {% if show.quote %}<a href="#quote" class="btn btn--primary btn--nav">{{ h.buttonText }}</a>{% endif %}
       </nav>
       <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu"
         aria-label="{{ h.openMenuLabel }}" data-label-open="{{ h.openMenuLabel }}" data-label-close="{{ h.closeMenuLabel }}">
@@ -42,11 +42,11 @@
   </div>
   <div class="mobile-menu" id="mobile-menu" data-menu hidden>
     <nav class="mobile-menu__nav container" aria-label="{{ h.mainNavLabel }}">
-      <a href="#work" class="mobile-menu__link">{{ h.nav.work }}</a>
-      <a href="#services" class="mobile-menu__link">{{ h.nav.services }}</a>
-      <a href="#process" class="mobile-menu__link">{{ h.nav.process }}</a>
-      <a href="#studio" class="mobile-menu__link">{{ h.nav.studio }}</a>
-      <a href="#quote" class="mobile-menu__cta">{{ h.buttonText }}</a>
+      {% if show.work %}<a href="#work" class="mobile-menu__link">{{ h.nav.work }}</a>{% endif %}
+      {% if show.services %}<a href="#services" class="mobile-menu__link">{{ h.nav.services }}</a>{% endif %}
+      {% if show.process %}<a href="#process" class="mobile-menu__link">{{ h.nav.process }}</a>{% endif %}
+      {% if show.studio %}<a href="#studio" class="mobile-menu__link">{{ h.nav.studio }}</a>{% endif %}
+      {% if show.quote %}<a href="#quote" class="mobile-menu__cta">{{ h.buttonText }}</a>{% endif %}
       {{ langSwitch("lang--menu") }}
     </nav>
   </div>

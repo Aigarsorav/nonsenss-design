@@ -8,7 +8,8 @@
       { "title": "Design", "text": "You get a rendered proof on your own bike. Two rounds of changes are included before anything goes to print." },
       { "title": "Print", "text": "Latex printed at 1440 dpi on cast vinyl, laminated for fuel and pressure-washer resistance, then contour cut." },
       { "title": "Apply", "text": "Drop the machine off and we fit it in the bay, or take the kit away with a fitting guide and a squeegee." }
-    ]
+    ],
+    "showSection": true
   },
   "et": {
     "label": "Kuidas see käib",
@@ -19,7 +20,8 @@
       { "title": "Kujundus", "text": "Saad renderdatud kavandi oma ratta peal. Kaks parandusringi on hinnas, enne kui midagi trükki läheb." },
       { "title": "Trükk", "text": "Lateksiga trükitud 1440 dpi valatud vinüülile, lamineeritud kütuse- ja survepesukindlaks, seejärel kontuurlõige." },
       { "title": "Paigaldus", "text": "Too masin meile ja paigaldame boksis, või võta komplekt kaasa koos paigaldusjuhendi ja kaabitsaga." }
-    ]
+    ],
+    "showSection": true
   },
   "ru": {
     "label": "Как это работает",
@@ -30,6 +32,7 @@
       { "title": "Дизайн", "text": "Вы получаете рендер макета на своём мотоцикле. Два круга правок включены, прежде чем что-либо уйдёт в печать." },
       { "title": "Печать", "text": "Латексная печать 1440 dpi на литом виниле, ламинация для стойкости к топливу и мойке под давлением, затем контурная резка." },
       { "title": "Установка", "text": "Оставьте технику у нас — установим в боксе, или заберите комплект с инструкцией и ракелем." }
-    ]
+    ],
+    "showSection": true
   }
 }

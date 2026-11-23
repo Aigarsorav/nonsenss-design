@@ -4,12 +4,12 @@ layout: base.njk
 {% include "partials/header.njk" %}
 <main id="main">
   {% include "partials/hero.njk" %}
-  {% include "partials/marquee.njk" %}
-  {% include "partials/work.njk" %}
-  {% include "partials/services.njk" %}
-  {% include "partials/process.njk" %}
-  {% include "partials/studio.njk" %}
-  {% include "partials/quote.njk" %}
+  {% if show.marquee %}{% include "partials/marquee.njk" %}{% endif %}
+  {% if show.work %}{% include "partials/work.njk" %}{% endif %}
+  {% if show.services %}{% include "partials/services.njk" %}{% endif %}
+  {% if show.process %}{% include "partials/process.njk" %}{% endif %}
+  {% if show.studio %}{% include "partials/studio.njk" %}{% endif %}
+  {% if show.quote %}{% include "partials/quote.njk" %}{% endif %}
 </main>
 {% include "partials/footer.njk" %}
 {% include "partials/lightbox.njk" %}

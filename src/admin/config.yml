@@ -142,6 +142,7 @@ collections:
         file: content/marquee.json
         i18n: true
         fields:
+          - { label: "Show this strip on the website", name: showSection, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the scrolling keyword strip under the hero. Same for every language." }
           - label: "Keywords"
             name: keywords
             widget: list
@@ -155,6 +156,7 @@ collections:
         file: content/work.json
         i18n: true
         fields:
+          - { label: "Show this section on the website", name: showSection, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the Work section, its menu link and the 'See the work' button in the hero. Same for every language." }
           - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. Selected work" }
           - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
           - { label: "'Show everything' filter text", name: allLabel, widget: string, i18n: true, hint: "This filter is always first and shows every project." }
@@ -233,6 +235,7 @@ collections:
         file: content/services.json
         i18n: true
         fields:
+          - { label: "Show this section on the website", name: showSection, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the Services section and its menu link. Same for every language." }
           - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. What we do" }
           - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
           - { label: "Text", name: text, widget: text, i18n: true }
@@ -258,6 +261,7 @@ collections:
         file: content/process.json
         i18n: true
         fields:
+          - { label: "Show this section on the website", name: showSection, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the Process section and its menu link. Same for every language." }
           - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. How it runs" }
           - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
           - { label: "Intro", name: intro, widget: text, i18n: true }
@@ -277,6 +281,7 @@ collections:
         file: content/studio.json
         i18n: true
         fields:
+          - { label: "Show this section on the website", name: showSection, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the Studio section and its menu link. Same for every language." }
           - { label: "Photo", name: image, widget: image, i18n: duplicate, hint: "Same photo for every language. Landscape 4:3 works best." }
           - { label: "Photo description", name: imageAlt, widget: string, i18n: true, hint: "A few words describing the photo, for screen readers." }
           - { label: "Caption on the photo", name: imageCaption, widget: string, required: false, i18n: true, hint: "Small text in the bottom-left corner of the photo." }
@@ -301,6 +306,7 @@ collections:
         file: content/quote.json
         i18n: true
         fields:
+          - { label: "Show this section on the website", name: showSection, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the quote section and form, plus every 'Request a quote' button and link that points to it (menu, hero, footer). Same for every language." }
           - { label: "Small label", name: label, widget: string, i18n: true, hint: "e.g. Request a quote" }
           - { label: "Headline", name: headline, widget: text, i18n: true, hint: "Press Enter to force a line break." }
           - { label: "Text", name: text, widget: text, i18n: true }
@@ -383,6 +389,7 @@ collections:
           - { label: "Email", name: email, widget: string, i18n: duplicate, hint: "Same for every language." }
           - { label: "Phone", name: phone, widget: string, i18n: duplicate, hint: "Written as it should be displayed, e.g. +372 5555 5555. Same for every language." }
           - { label: "Opening hours", name: hours, widget: string, i18n: true }
+          - { label: "Show the 'Elsewhere' column", name: showElsewhere, widget: boolean, default: true, required: false, i18n: duplicate, hint: "Switch off to hide the whole links column (Instagram and other links) in the footer. Same for every language." }
           - { label: "Links column — heading", name: elsewhereLabel, widget: string, i18n: true }
           - { label: "Instagram — link text", name: instagramLabel, widget: string, i18n: true }
           - { label: "Instagram — address", name: instagramUrl, widget: string, required: false, i18n: duplicate, hint: "Full address, e.g. https://instagram.com/apexline. Leave empty to hide. Same for every language." }

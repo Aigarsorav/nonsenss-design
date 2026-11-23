@@ -50,7 +50,8 @@
       "title": "Request received",
       "message": "Thanks {name}. We'll look over the details and come back with a fixed price, usually within one working day.",
       "againButton": "Send another request"
-    }
+    },
+    "showSection": true
   },
   "et": {
     "label": "Küsi pakkumist",
@@ -103,7 +104,8 @@
       "title": "Päring kätte saadud",
       "message": "Aitäh, {name}. Vaatame detailid üle ja tuleme kindla hinnaga tagasi, tavaliselt ühe tööpäeva jooksul.",
       "againButton": "Saada veel üks päring"
-    }
+    },
+    "showSection": true
   },
   "ru": {
     "label": "Запросить расчёт",
@@ -156,6 +158,7 @@
       "title": "Запрос получен",
       "message": "Спасибо, {name}. Посмотрим детали и вернёмся с фиксированной ценой, обычно в течение одного рабочего дня.",
       "againButton": "Отправить ещё один запрос"
-    }
+    },
+    "showSection": true
   }
 }

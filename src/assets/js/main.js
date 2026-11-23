@@ -49,7 +49,7 @@
 
   /* ---------- Work filters (FLIP transition) ---------- */
   const grid = $("[data-grid]");
-  const cards = $$(".card", grid);
+  const cards = grid ? $$(".card", grid) : []; // the Work section can be switched off in the CMS
   const filterButtons = $$("[data-filter]");
   let filterTimer;
 
@@ -224,101 +224,104 @@
 
   /* ---------- Quote form (Netlify Forms) ---------- */
   const form = $("[data-quote-form]");
-  const success = $("[data-quote-success]");
-  const fileInput = $("[data-upload-input]", form);
-  const uploadText = $("[data-upload-text]", form);
-  const errorBox = $("[data-form-error]", form);
-  const submit = $("[data-submit]", form);
-  const submitText = $("[data-submit-text]", form);
-  const MAX_FILES = 5;
-  const MAX_BYTES = 8 * 1024 * 1024; // Netlify Forms request limit
+  // The quote section can be switched off in the CMS.
+  if (form) {
+    const success = $("[data-quote-success]");
+    const fileInput = $("[data-upload-input]", form);
+    const uploadText = $("[data-upload-text]", form);
+    const errorBox = $("[data-form-error]", form);
+    const submit = $("[data-submit]", form);
+    const submitText = $("[data-submit-text]", form);
+    const MAX_FILES = 5;
+    const MAX_BYTES = 8 * 1024 * 1024; // Netlify Forms request limit
 
-  const updateUploadText = () => {
-    const n = fileInput.files.length;
-    uploadText.textContent = !n ? form.dataset.msgDefault
-      : n === 1 ? form.dataset.msgOne
-      : form.dataset.msgMany.replace("{count}", n);
-  };
-  fileInput.addEventListener("change", updateUploadText);
-
-  // Downscale large photos in the browser so uploads stay under the size limit.
-  const shrink = (file) => new Promise((resolve) => {
-    if (!/^image\/(jpeg|png|webp)$/.test(file.type) || file.size < 900 * 1024) return resolve(file);
-    const url = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      const scale = Math.min(1, 2000 / Math.max(img.naturalWidth, img.naturalHeight));
-      const canvas = document.createElement("canvas");
-      canvas.width = Math.round(img.naturalWidth * scale);
-      canvas.height = Math.round(img.naturalHeight * scale);
-      canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
-      URL.revokeObjectURL(url);
-      canvas.toBlob((blob) => {
-        if (!blob || blob.size >= file.size) return resolve(file);
-        resolve(new File([blob], file.name.replace(/\.\w+$/, "") + ".jpg", { type: "image/jpeg" }));
-      }, "image/jpeg", 0.85);
+    const updateUploadText = () => {
+      const n = fileInput.files.length;
+      uploadText.textContent = !n ? form.dataset.msgDefault
+        : n === 1 ? form.dataset.msgOne
+        : form.dataset.msgMany.replace("{count}", n);
     };
-    img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
-    img.src = url;
-  });
+    fileInput.addEventListener("change", updateUploadText);
 
-  const showSuccess = (name) => {
-    const text = $("[data-success-text]", success);
-    const first = (name || "").trim().split(/\s+/)[0];
-    const template = text.dataset.template;
-    // Without a name, drop "{name}" plus any comma/space before it: "Thanks {name}." → "Thanks."
-    text.textContent = first ? template.replace("{name}", first) : template.replace(/[,\s]*\{name\}/, "").replace(/\s+([.!?,])/, "$1");
-    form.hidden = true;
-    success.hidden = false;
-    success.focus({ preventScroll: true });
-  };
+    // Downscale large photos in the browser so uploads stay under the size limit.
+    const shrink = (file) => new Promise((resolve) => {
+      if (!/^image\/(jpeg|png|webp)$/.test(file.type) || file.size < 900 * 1024) return resolve(file);
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        const scale = Math.min(1, 2000 / Math.max(img.naturalWidth, img.naturalHeight));
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(img.naturalWidth * scale);
+        canvas.height = Math.round(img.naturalHeight * scale);
+        canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(url);
+        canvas.toBlob((blob) => {
+          if (!blob || blob.size >= file.size) return resolve(file);
+          resolve(new File([blob], file.name.replace(/\.\w+$/, "") + ".jpg", { type: "image/jpeg" }));
+        }, "image/jpeg", 0.85);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+      img.src = url;
+    });
 
-  const setSending = (on) => {
-    submit.disabled = on;
-    submit.classList.toggle("is-sending", on);
-    if (!submitText.dataset.idle) submitText.dataset.idle = submitText.textContent;
-    submitText.textContent = on ? submitText.dataset.sending : submitText.dataset.idle;
-  };
+    const showSuccess = (name) => {
+      const text = $("[data-success-text]", success);
+      const first = (name || "").trim().split(/\s+/)[0];
+      const template = text.dataset.template;
+      // Without a name, drop "{name}" plus any comma/space before it: "Thanks {name}." → "Thanks."
+      text.textContent = first ? template.replace("{name}", first) : template.replace(/[,\s]*\{name\}/, "").replace(/\s+([.!?,])/, "$1");
+      form.hidden = true;
+      success.hidden = false;
+      success.focus({ preventScroll: true });
+    };
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    errorBox.hidden = true;
-    // Plain-text summary of the multi-select so the notification email reads cleanly.
-    $("[data-need-summary]", form).value = $$("[data-need-group] input:checked", form).map((i) => i.value).join(", ");
-    const data = new FormData(form);
-    const files = [...fileInput.files].slice(0, MAX_FILES);
-    for (let i = 1; i <= MAX_FILES; i++) data.delete(`photo_${i}`);
-    setSending(true);
-    try {
-      const prepared = await Promise.all(files.map(shrink));
-      if (prepared.reduce((sum, f) => sum + f.size, 0) > MAX_BYTES) {
-        throw new Error(form.dataset.msgTooLarge);
+    const setSending = (on) => {
+      submit.disabled = on;
+      submit.classList.toggle("is-sending", on);
+      if (!submitText.dataset.idle) submitText.dataset.idle = submitText.textContent;
+      submitText.textContent = on ? submitText.dataset.sending : submitText.dataset.idle;
+    };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorBox.hidden = true;
+      // Plain-text summary of the multi-select so the notification email reads cleanly.
+      $("[data-need-summary]", form).value = $$("[data-need-group] input:checked", form).map((i) => i.value).join(", ");
+      const data = new FormData(form);
+      const files = [...fileInput.files].slice(0, MAX_FILES);
+      for (let i = 1; i <= MAX_FILES; i++) data.delete(`photo_${i}`);
+      setSending(true);
+      try {
+        const prepared = await Promise.all(files.map(shrink));
+        if (prepared.reduce((sum, f) => sum + f.size, 0) > MAX_BYTES) {
+          throw new Error(form.dataset.msgTooLarge);
+        }
+        prepared.forEach((file, i) => data.append(`photo_${i + 1}`, file, file.name));
+        const res = await fetch("/", { method: "POST", body: data });
+        if (!res.ok) throw new Error();
+        const name = data.get("name");
+        form.reset();
+        updateUploadText();
+        showSuccess(name);
+      } catch (err) {
+        errorBox.textContent = (err && err.message) || errorBox.dataset.message;
+        errorBox.hidden = false;
+      } finally {
+        setSending(false);
       }
-      prepared.forEach((file, i) => data.append(`photo_${i + 1}`, file, file.name));
-      const res = await fetch("/", { method: "POST", body: data });
-      if (!res.ok) throw new Error();
-      const name = data.get("name");
-      form.reset();
-      updateUploadText();
-      showSuccess(name);
-    } catch (err) {
-      errorBox.textContent = (err && err.message) || errorBox.dataset.message;
-      errorBox.hidden = false;
-    } finally {
-      setSending(false);
+    });
+    errorBox.dataset.message = $("[data-quote]").dataset.error || "";
+
+    $("[data-quote-again]").addEventListener("click", () => {
+      success.hidden = true;
+      form.hidden = false;
+      $("input[name=name]", form).focus();
+    });
+
+    // Fallback when the form was submitted without JavaScript.
+    if (new URLSearchParams(location.search).has("sent")) {
+      showSuccess("");
+      history.replaceState(null, "", location.pathname + "#quote");
     }
-  });
-  errorBox.dataset.message = $("[data-quote]").dataset.error || "";
-
-  $("[data-quote-again]").addEventListener("click", () => {
-    success.hidden = true;
-    form.hidden = false;
-    $("input[name=name]", form).focus();
-  });
-
-  // Fallback when the form was submitted without JavaScript.
-  if (new URLSearchParams(location.search).has("sent")) {
-    showSuccess("");
-    history.replaceState(null, "", location.pathname + "#quote");
   }
 })();

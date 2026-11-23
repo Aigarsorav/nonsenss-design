@@ -9,7 +9,8 @@
       "Race team livery",
       "Apparel transfers",
       "Same-week turnaround"
-    ]
+    ],
+    "showSection": true
   },
   "et": {
     "keywords": [
@@ -21,7 +22,8 @@
       "Võistkondade kujundus",
       "Rõivaste siirdetrükk",
       "Valmis sama nädala jooksul"
-    ]
+    ],
+    "showSection": true
   },
   "ru": {
     "keywords": [
@@ -33,6 +35,7 @@
       "Ливреи гоночных команд",
       "Термотрансферы на одежду",
       "Готово в течение недели"
-    ]
+    ],
+    "showSection": true
   }
 }

@@ -12,7 +12,8 @@
       { "value": "400+", "label": "Bikes kitted" },
       { "value": "5 days", "label": "Typical turnaround" },
       { "value": "100%", "label": "In-house print" }
-    ]
+    ],
+    "showSection": true
   },
   "et": {
     "image": "/images/uploads/studio-application.jpg",
@@ -27,7 +28,8 @@
       { "value": "400+", "label": "Ratast varustatud" },
       { "value": "5 päeva", "label": "Tavaline tähtaeg" },
       { "value": "100%", "label": "Trükk kohapeal" }
-    ]
+    ],
+    "showSection": true
   },
   "ru": {
     "image": "/images/uploads/studio-application.jpg",
@@ -42,6 +44,7 @@
       { "value": "400+", "label": "Мотоциклов оформлено" },
       { "value": "5 дней", "label": "Обычный срок" },
       { "value": "100%", "label": "Печать у нас" }
-    ]
+    ],
+    "showSection": true
   }
 }

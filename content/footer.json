@@ -22,7 +22,8 @@
     ],
     "email": "info@nonsenss.com",
     "description": "Design · Print · Install. Workshop and print floor in Tallinn, Estonia. ",
-    "instagramUrl": "https://www.instagram.com/nonsenssdesign"
+    "instagramUrl": "https://www.instagram.com/nonsenssdesign",
+    "showElsewhere": true
   },
   "et": {
     "instagramLabel": "Instagram",
@@ -47,7 +48,8 @@
     ],
     "email": "info@nonsenss.com",
     "description": "Disain · Print · Paigaldus. Töökoda ja trükisaal Tallinnas. ",
-    "instagramUrl": "https://www.instagram.com/nonsenssdesign"
+    "instagramUrl": "https://www.instagram.com/nonsenssdesign",
+    "showElsewhere": true
   },
   "ru": {
     "instagramLabel": "Instagram",
@@ -72,6 +74,7 @@
     ],
     "email": "info@nonsenss.com",
     "description": "Оклейка · Печать · Гоночная графика. Мастерская и печатный цех в Таллине, Эстония. Комплекты отправляем по всей Европе.",
-    "instagramUrl": "https://www.instagram.com/nonsenssdesign"
+    "instagramUrl": "https://www.instagram.com/nonsenssdesign",
+    "showElsewhere": true
   }
 }

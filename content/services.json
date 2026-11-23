@@ -43,7 +43,8 @@
           "Pit delivery"
         ]
       }
-    ]
+    ],
+    "showSection": true
   },
   "et": {
     "label": "Mida me teeme",
@@ -89,7 +90,8 @@
           "Toomine boksi"
         ]
       }
-    ]
+    ],
+    "showSection": true
   },
   "ru": {
     "label": "Что мы делаем",
@@ -135,6 +137,7 @@
           "Доставка в паддок"
         ]
       }
-    ]
+    ],
+    "showSection": true
   }
 }

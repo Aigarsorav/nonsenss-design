@@ -266,6 +266,10 @@ ul, ol { list-style: none; }
 
 /* ---------- Services ---------- */
 .band { border-block: 1px solid var(--border); background: hsl(210 6% 11% / .6); }
+/* Sections can be switched off in the CMS. When that brings two bordered blocks together,
+   keep a single divider instead of a doubled line. */
+.marquee + .band, .marquee + .quote, .band + .band { border-top-width: 0; }
+main:has(> .marquee:last-child, > .band:last-child) + .footer { border-top-width: 0; }
 .services { display: grid; gap: 40px; }
 .services__text { margin-top: 24px; max-width: 384px; font-size: 14px; line-height: 1.9; color: var(--muted-fg); }
 .services__list { border-top: 1px solid var(--border); }
@@ -470,6 +474,7 @@ fieldset.field { border: 0; }
   .logo--both .logo__img { max-width: 180px; }
   .work__head { flex-direction: row; align-items: flex-end; justify-content: space-between; }
   .footer__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .footer__grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 /* Full menu instead of the hamburger. The menu (4 links + languages + button) is ~650px in the
    widest language and the text logo ~190px, so with gutters it needs ~940px. Keep in sync with

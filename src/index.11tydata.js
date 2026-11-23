@@ -8,10 +8,21 @@ const SECTIONS = ["settings", "header", "hero", "specs", "marquee", "work", "ser
 // with per-language sub-fields inside). Always read from `en`, even if the CMS has left a
 // copy under another locale.
 const SHARED = {
-  work: ["categories", "projects"],
   header: ["logoImage", "logoDisplay", "logoInFooter", "favicon"],
   hero: ["showSpecs"],
+  marquee: ["showSection"],
+  work: ["categories", "projects", "showSection"],
+  services: ["showSection"],
+  process: ["showSection"],
+  studio: ["showSection"],
+  quote: ["showSection"],
+  footer: ["showElsewhere"],
 };
+
+// Sections with a "Show this section" toggle (shared across languages, on unless switched off).
+// `show` says which are visible; `hiddenAnchors` lists the #links that must not be rendered.
+const TOGGLED = ["marquee", "work", "services", "process", "studio", "quote"];
+const isOn = (data, key, field) => (data[key]?.en || {})[field] !== false;
 
 const locales = [
   { code: "en", label: "EN", name: "English", url: "/" },
@@ -40,6 +51,12 @@ export default {
   pagination: { data: "locales", size: 1, alias: "locale" },
   eleventyComputed: {
     lang: (data) => data.locale.code,
+    show: (data) => {
+      const out = { elsewhere: isOn(data, "footer", "showElsewhere") };
+      for (const key of TOGGLED) out[key] = isOn(data, key, "showSection");
+      return out;
+    },
+    hiddenAnchors: (data) => TOGGLED.filter((key) => !isOn(data, key, "showSection")).map((key) => `#${key}`),
     permalink: (data) => data.locale.url,
     t: (data) => {
       const code = data.locale.code;

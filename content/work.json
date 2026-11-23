@@ -74,7 +74,8 @@
           { "image": "/images/uploads/fleet-lines.jpg", "alt": { "en": "Fleet Lines — Sprinter commercial van", "et": "Fleet Lines — Sprinter kaubik", "ru": "Fleet Lines — коммерческий фургон Sprinter" } }
         ]
       }
-    ]
+    ],
+    "showSection": true
   },
   "et": {
     "label": "Valitud tööd",
@@ -84,7 +85,8 @@
     "openGalleryLabel": "Ava galerii",
     "previousLabel": "Eelmine pilt",
     "nextLabel": "Järgmine pilt",
-    "closeLabel": "Sulge galerii"
+    "closeLabel": "Sulge galerii",
+    "showSection": true
   },
   "ru": {
     "label": "Избранные работы",
@@ -94,6 +96,7 @@
     "openGalleryLabel": "Открыть галерею",
     "previousLabel": "Предыдущее фото",
     "nextLabel": "Следующее фото",
-    "closeLabel": "Закрыть галерею"
+    "closeLabel": "Закрыть галерею",
+    "showSection": true
   }
 }

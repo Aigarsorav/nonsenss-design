@@ -11,10 +11,12 @@
     </div>
     <h1 class="hero__title">{{ t.hero.headline | lines }}<span class="hl"> {{ t.hero.headlineHighlight | lines }}</span></h1>
     <p class="hero__intro">{{ t.hero.intro }}</p>
+    {% if show.quote or show.work %}
     <div class="hero__actions">
-      <a href="#quote" class="btn btn--primary btn--lg">{{ t.hero.primaryButton }}</a>
-      <a href="#work" class="btn btn--ghost btn--lg">{{ t.hero.secondaryButton }}</a>
+      {% if show.quote %}<a href="#quote" class="btn btn--primary btn--lg">{{ t.hero.primaryButton }}</a>{% endif %}
+      {% if show.work %}<a href="#work" class="btn btn--ghost btn--lg">{{ t.hero.secondaryButton }}</a>{% endif %}
     </div>
+    {% endif %}
     {% if t.hero.showSpecs and t.specs.items and t.specs.items.length %}
     <dl class="specs">
       {% for item in t.specs.items %}
