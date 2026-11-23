@@ -210,8 +210,12 @@ ul, ol { list-style: none; }
   font-weight: 600; text-transform: uppercase; letter-spacing: .025em;
 }
 
+/* Exactly one full-width divider between neighbouring page blocks (the footer draws its own),
+   whichever sections are switched on in the CMS. Blocks themselves carry no top/bottom borders. */
+main > * + * { border-top: 1px solid var(--border); }
+
 /* ---------- Marquee ---------- */
-.marquee { overflow: hidden; border-block: 1px solid var(--border); background: var(--card); padding-block: 16px; }
+.marquee { overflow: hidden; background: var(--card); padding-block: 16px; }
 .marquee__track { display: flex; width: max-content; align-items: center; white-space: nowrap; animation: ticker 34s linear infinite; }
 .marquee__item { display: flex; align-items: center; gap: 40px; padding-right: 40px; }
 .marquee__text { font-size: 11px; line-height: 16.5px; text-transform: uppercase; letter-spacing: .28em; color: var(--muted-fg); }
@@ -265,11 +269,7 @@ ul, ol { list-style: none; }
 .card:hover .card__details, .card:focus-within .card__details { max-height: 64px; border-color: hsl(var(--border-a) / .7); }
 
 /* ---------- Services ---------- */
-.band { border-block: 1px solid var(--border); background: hsl(210 6% 11% / .6); }
-/* Sections can be switched off in the CMS. When that brings two bordered blocks together,
-   keep a single divider instead of a doubled line. */
-.marquee + .band, .marquee + .quote, .band + .band { border-top-width: 0; }
-main:has(> .marquee:last-child, > .band:last-child) + .footer { border-top-width: 0; }
+.band { background: hsl(210 6% 11% / .6); }
 .services { display: grid; gap: 40px; }
 .services__text { margin-top: 24px; max-width: 384px; font-size: 14px; line-height: 1.9; color: var(--muted-fg); }
 .services__list { border-top: 1px solid var(--border); }
@@ -311,7 +311,7 @@ main:has(> .marquee:last-child, > .band:last-child) + .footer { border-top-width
 .stats__label { margin-top: 4px; font-size: 10px; line-height: 15px; text-transform: uppercase; letter-spacing: .18em; color: var(--muted-fg); }
 
 /* ---------- Quote ---------- */
-.quote { position: relative; overflow: hidden; border-top: 1px solid var(--border); }
+.quote { position: relative; overflow: hidden; }
 .quote__grid-bg { position: absolute; inset: 0; opacity: .4; }
 .quote__inner { position: relative; display: grid; gap: 48px; }
 .quote__text { margin-top: 24px; max-width: 448px; font-size: 14px; line-height: 1.9; color: hsl(var(--fg-a) / .7); }

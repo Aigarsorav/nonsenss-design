@@ -1,21 +1,23 @@
-<section id="process" class="container section process">
-  <div class="process__head">
-    <div>
-      <div class="eyebrow">
-        <span class="eyebrow__line"></span>
-        <span class="label-tech">{{ t.process.label }}</span>
+<section id="process">
+  <div class="container section process">
+    <div class="process__head">
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow__line"></span>
+          <span class="label-tech">{{ t.process.label }}</span>
+        </div>
+        <h2 class="h2">{{ t.process.headline | lines }}</h2>
       </div>
-      <h2 class="h2">{{ t.process.headline | lines }}</h2>
+      <p class="process__intro">{{ t.process.intro }}</p>
     </div>
-    <p class="process__intro">{{ t.process.intro }}</p>
+    <ol class="process__grid">
+      {% for step in t.process.steps %}
+      <li class="step">
+        <span class="num num--wide">{{ loop.index | pad2 }}</span>
+        <h3 class="step__title">{{ step.title }}</h3>
+        <p class="step__text">{{ step.text }}</p>
+      </li>
+      {% endfor %}
+    </ol>
   </div>
-  <ol class="process__grid">
-    {% for step in t.process.steps %}
-    <li class="step">
-      <span class="num num--wide">{{ loop.index | pad2 }}</span>
-      <h3 class="step__title">{{ step.title }}</h3>
-      <p class="step__text">{{ step.text }}</p>
-    </li>
-    {% endfor %}
-  </ol>
 </section>
