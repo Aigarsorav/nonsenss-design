@@ -15,6 +15,7 @@
       <a href="#quote" class="btn btn--primary btn--lg">{{ t.hero.primaryButton }}</a>
       <a href="#work" class="btn btn--ghost btn--lg">{{ t.hero.secondaryButton }}</a>
     </div>
+    {% if t.hero.showSpecs and t.specs.items and t.specs.items.length %}
     <dl class="specs">
       {% for item in t.specs.items %}
       <div class="specs__item">
@@ -23,5 +24,6 @@
       </div>
       {% endfor %}
     </dl>
+    {% endif %}
   </div>
 </section>

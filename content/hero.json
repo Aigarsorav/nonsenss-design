@@ -7,7 +7,8 @@
     "primaryButton": "Request a quote",
     "secondaryButton": "See the work",
     "backgroundImage": "/images/uploads/hero-rally-car.jpg",
-    "backgroundAlt": "Matte black rally car with custom graphics in the wrap studio"
+    "backgroundAlt": "Matte black rally car with custom graphics in the wrap studio",
+    "showSpecs": false
   },
   "et": {
     "eyebrow": "Tallinn, Eesti · Disain, tootmine & paigaldus",
@@ -17,7 +18,8 @@
     "primaryButton": "Küsi pakkumist",
     "secondaryButton": "Vaata töid",
     "backgroundImage": "/images/uploads/hero-rally-car.jpg",
-    "backgroundAlt": "Mattmust ralliauto eritellimusel graafikaga kilestuudios"
+    "backgroundAlt": "Mattmust ralliauto eritellimusel graafikaga kilestuudios",
+    "showSpecs": false
   },
   "ru": {
     "eyebrow": "Таллин, Эстония · студия оклейки и графики",
@@ -27,6 +29,7 @@
     "primaryButton": "Запросить расчёт",
     "secondaryButton": "Смотреть работы",
     "backgroundImage": "/images/uploads/hero-rally-car.jpg",
-    "backgroundAlt": "Матово-чёрный раллийный автомобиль с индивидуальной графикой в студии оклейки"
+    "backgroundAlt": "Матово-чёрный раллийный автомобиль с индивидуальной графикой в студии оклейки",
+    "showSpecs": false
   }
 }

@@ -10,6 +10,7 @@ const SECTIONS = ["settings", "header", "hero", "specs", "marquee", "work", "ser
 const SHARED = {
   work: ["categories", "projects"],
   header: ["logoImage", "logoDisplay", "logoInFooter", "favicon"],
+  hero: ["showSpecs"],
 };
 
 const locales = [

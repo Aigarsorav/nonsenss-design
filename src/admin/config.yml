@@ -118,6 +118,7 @@ collections:
           - { label: "Outlined button text", name: secondaryButton, widget: string, i18n: true, hint: "Jumps to the work section." }
           - { label: "Background photo", name: backgroundImage, widget: image, i18n: duplicate, hint: "Same photo for every language. Wide landscape, at least 2000 px wide; it is darkened automatically." }
           - { label: "Background photo description", name: backgroundAlt, widget: string, i18n: true, hint: "Describe the photo in a few words for screen readers and search engines." }
+          - { label: "Show specs strip", name: showSpecs, widget: boolean, default: false, required: false, i18n: duplicate, hint: "Switch on to show the spec strip (Material / Laminate / Print / Cut) under the hero buttons. Edit its items in 'Spec strip (under the hero)'. Same for every language." }
 
       # ------------------------------------------------------------ Specs
       - name: specs
