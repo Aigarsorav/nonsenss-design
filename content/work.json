@@ -9,22 +9,22 @@
     "label": "Selected work",
     "projects": [
       {
-        "title": "Gate Drop",
+        "title": "R. Virves Skoda Rally2 Livery",
         "subtitle": {
-          "en": "KTM 250 SX-F",
-          "et": "KTM 250 SX-F",
-          "ru": "KTM 250 SX-F"
+          "en": "",
+          "et": "",
+          "ru": ""
         },
         "year": "2025",
         "category": "wraps",
         "details": {
-          "en": "Full plastics wrap · matte laminate",
-          "et": "Plastikute täiskiletus · matt laminaat",
-          "ru": "Полная оклейка пластика · матовый ламинат"
+          "en": "",
+          "et": "",
+          "ru": ""
         },
         "gallery": [
           {
-            "image": "/images/uploads/gate-drop.jpg",
+            "image": "/images/uploads/fabia_virves_01chrome.jpg",
             "alt": {
               "en": "Gate Drop — KTM 250 SX-F",
               "et": "Gate Drop — KTM 250 SX-F",
