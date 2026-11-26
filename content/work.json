@@ -1,102 +1,365 @@
 {
   "en": {
-    "label": "Selected work",
-    "headline": "Wraps, kits\nand printed detail",
-    "allLabel": "All work",
-    "galleryLabel": "Project gallery",
-    "openGalleryLabel": "Open gallery",
-    "previousLabel": "Previous image",
     "nextLabel": "Next image",
-    "closeLabel": "Close gallery",
-    "categories": [
-      { "id": "wraps", "name": { "en": "Wraps", "et": "Kiled", "ru": "Оклейка" } },
-      { "id": "graphics", "name": { "en": "Race graphics", "et": "Võistlusgraafika", "ru": "Гоночная графика" } },
-      { "id": "print", "name": { "en": "Print & decals", "et": "Trükk ja kleebised", "ru": "Печать и наклейки" } }
-    ],
+    "galleryLabel": "Project gallery",
+    "showSection": true,
+    "openGalleryLabel": "Open gallery",
+    "allLabel": "All work",
+    "headline": "Portfolio",
+    "label": "Selected work",
     "projects": [
       {
         "title": "Gate Drop",
-        "subtitle": { "en": "KTM 250 SX-F", "et": "KTM 250 SX-F", "ru": "KTM 250 SX-F" },
+        "subtitle": {
+          "en": "KTM 250 SX-F",
+          "et": "KTM 250 SX-F",
+          "ru": "KTM 250 SX-F"
+        },
         "year": "2025",
         "category": "wraps",
-        "details": { "en": "Full plastics wrap · matte laminate", "et": "Plastikute täiskiletus · matt laminaat", "ru": "Полная оклейка пластика · матовый ламинат" },
+        "details": {
+          "en": "Full plastics wrap · matte laminate",
+          "et": "Plastikute täiskiletus · matt laminaat",
+          "ru": "Полная оклейка пластика · матовый ламинат"
+        },
         "gallery": [
-          { "image": "/images/uploads/gate-drop.jpg", "alt": { "en": "Gate Drop — KTM 250 SX-F", "et": "Gate Drop — KTM 250 SX-F", "ru": "Gate Drop — KTM 250 SX-F" } }
+          {
+            "image": "/images/uploads/gate-drop.jpg",
+            "alt": {
+              "en": "Gate Drop — KTM 250 SX-F",
+              "et": "Gate Drop — KTM 250 SX-F",
+              "ru": "Gate Drop — KTM 250 SX-F"
+            }
+          }
         ]
       },
       {
         "title": "Airborne",
-        "subtitle": { "en": "Husqvarna FC 350", "et": "Husqvarna FC 350", "ru": "Husqvarna FC 350" },
+        "subtitle": {
+          "en": "Husqvarna FC 350",
+          "et": "Husqvarna FC 350",
+          "ru": "Husqvarna FC 350"
+        },
         "year": "2025",
         "category": "graphics",
-        "details": { "en": "Race kit · number plates · 21 mil vinyl", "et": "Võistluskomplekt · numbrilauad · 21 mil vinüül", "ru": "Гоночный комплект · номерные таблички · винил 21 mil" },
+        "details": {
+          "en": "Race kit · number plates · 21 mil vinyl",
+          "et": "Võistluskomplekt · numbrilauad · 21 mil vinüül",
+          "ru": "Гоночный комплект · номерные таблички · винил 21 mil"
+        },
         "gallery": [
-          { "image": "/images/uploads/airborne.jpg", "alt": { "en": "Airborne — Husqvarna FC 350", "et": "Airborne — Husqvarna FC 350", "ru": "Airborne — Husqvarna FC 350" } }
+          {
+            "image": "/images/uploads/airborne.jpg",
+            "alt": {
+              "en": "Airborne — Husqvarna FC 350",
+              "et": "Airborne — Husqvarna FC 350",
+              "ru": "Airborne — Husqvarna FC 350"
+            }
+          }
         ]
       },
       {
         "title": "Satin Split",
-        "subtitle": { "en": "Audi RS", "et": "Audi RS", "ru": "Audi RS" },
+        "subtitle": {
+          "en": "Audi RS",
+          "et": "Audi RS",
+          "ru": "Audi RS"
+        },
         "year": "2024",
         "category": "wraps",
-        "details": { "en": "Colour change wrap · satin grey", "et": "Värvivahetuskile · satiinhall", "ru": "Смена цвета · сатиновый серый" },
+        "details": {
+          "en": "Colour change wrap · satin grey",
+          "et": "Värvivahetuskile · satiinhall",
+          "ru": "Смена цвета · сатиновый серый"
+        },
         "gallery": [
-          { "image": "/images/uploads/satin-split.jpg", "alt": { "en": "Satin Split — Audi RS", "et": "Satin Split — Audi RS", "ru": "Satin Split — Audi RS" } }
+          {
+            "image": "/images/uploads/satin-split.jpg",
+            "alt": {
+              "en": "Satin Split — Audi RS",
+              "et": "Satin Split — Audi RS",
+              "ru": "Satin Split — Audi RS"
+            }
+          }
         ]
       },
       {
         "title": "Cut Sheet",
-        "subtitle": { "en": "Printed decal set", "et": "Trükitud kleebisekomplekt", "ru": "Набор печатных наклеек" },
+        "subtitle": {
+          "en": "Printed decal set",
+          "et": "Trükitud kleebisekomplekt",
+          "ru": "Набор печатных наклеек"
+        },
         "year": "2025",
         "category": "print",
-        "details": { "en": "Latex print · contour cut · laminated", "et": "Latekstrükk · kontuurlõige · lamineeritud", "ru": "Латексная печать · контурная резка · ламинировано" },
+        "details": {
+          "en": "Latex print · contour cut · laminated",
+          "et": "Latekstrükk · kontuurlõige · lamineeritud",
+          "ru": "Латексная печать · контурная резка · ламинировано"
+        },
         "gallery": [
-          { "image": "/images/uploads/cut-sheet.jpg", "alt": { "en": "Cut Sheet — printed decal set", "et": "Cut Sheet — trükitud kleebisekomplekt", "ru": "Cut Sheet — набор печатных наклеек" } }
+          {
+            "image": "/images/uploads/cut-sheet.jpg",
+            "alt": {
+              "en": "Cut Sheet — printed decal set",
+              "et": "Cut Sheet — trükitud kleebisekomplekt",
+              "ru": "Cut Sheet — набор печатных наклеек"
+            }
+          }
         ]
       },
       {
         "title": "Team Kit",
-        "subtitle": { "en": "Jersey & helmet graphics", "et": "Särgi- ja kiivrigraafika", "ru": "Графика для джерси и шлема" },
+        "subtitle": {
+          "en": "Jersey & helmet graphics",
+          "et": "Särgi- ja kiivrigraafika",
+          "ru": "Графика для джерси и шлема"
+        },
         "year": "2024",
         "category": "graphics",
-        "details": { "en": "Apparel print · heat transfer", "et": "Rõivatrükk · termosiire", "ru": "Печать на одежде · термотрансфер" },
+        "details": {
+          "en": "Apparel print · heat transfer",
+          "et": "Rõivatrükk · termosiire",
+          "ru": "Печать на одежде · термотрансфер"
+        },
         "gallery": [
-          { "image": "/images/uploads/team-kit.jpg", "alt": { "en": "Team Kit — jersey & helmet graphics", "et": "Team Kit — särgi- ja kiivrigraafika", "ru": "Team Kit — графика для джерси и шлема" } }
+          {
+            "image": "/images/uploads/team-kit.jpg",
+            "alt": {
+              "en": "Team Kit — jersey & helmet graphics",
+              "et": "Team Kit — särgi- ja kiivrigraafika",
+              "ru": "Team Kit — графика для джерси и шлема"
+            }
+          }
         ]
       },
       {
         "title": "Fleet Lines",
-        "subtitle": { "en": "Sprinter · commercial", "et": "Sprinter · kommertssõiduk", "ru": "Sprinter · коммерческий" },
+        "subtitle": {
+          "en": "Sprinter · commercial",
+          "et": "Sprinter · kommertssõiduk",
+          "ru": "Sprinter · коммерческий"
+        },
         "year": "2024",
         "category": "wraps",
-        "details": { "en": "Partial wrap · fleet livery", "et": "Osaline kiletus · autopargi kujundus", "ru": "Частичная оклейка · ливрея автопарка" },
+        "details": {
+          "en": "Partial wrap · fleet livery",
+          "et": "Osaline kiletus · autopargi kujundus",
+          "ru": "Частичная оклейка · ливрея автопарка"
+        },
         "gallery": [
-          { "image": "/images/uploads/fleet-lines.jpg", "alt": { "en": "Fleet Lines — Sprinter commercial van", "et": "Fleet Lines — Sprinter kaubik", "ru": "Fleet Lines — коммерческий фургон Sprinter" } }
+          {
+            "image": "/images/uploads/fleet-lines.jpg",
+            "alt": {
+              "en": "Fleet Lines — Sprinter commercial van",
+              "et": "Fleet Lines — Sprinter kaubik",
+              "ru": "Fleet Lines — коммерческий фургон Sprinter"
+            }
+          }
         ]
       }
     ],
-    "showSection": true
+    "categories": [
+      {
+        "id": "wraps",
+        "name": {
+          "en": "Wraps",
+          "et": "Kiled",
+          "ru": "Оклейка"
+        }
+      },
+      {
+        "id": "graphics",
+        "name": {
+          "en": "Race graphics",
+          "et": "Võistlusgraafika",
+          "ru": "Гоночная графика"
+        }
+      },
+      {
+        "id": "print",
+        "name": {
+          "en": "Print & decals",
+          "et": "Trükk ja kleebised",
+          "ru": "Печать и наклейки"
+        }
+      }
+    ],
+    "closeLabel": "Close gallery",
+    "previousLabel": "Previous image"
   },
   "et": {
-    "label": "Valitud tööd",
-    "headline": "Kiled, komplektid\nja trükidetailid",
-    "allLabel": "Kõik tööd",
-    "galleryLabel": "Projekti galerii",
-    "openGalleryLabel": "Ava galerii",
-    "previousLabel": "Eelmine pilt",
     "nextLabel": "Järgmine pilt",
+    "galleryLabel": "Projekti galerii",
+    "showSection": true,
+    "openGalleryLabel": "Ava galerii",
+    "allLabel": "Kõik tööd",
+    "headline": "Kiled, komplektid\nja trükidetailid",
+    "label": "Valitud tööd",
+    "projects": [
+      {
+        "title": "Gate Drop",
+        "subtitle": {
+          "en": "KTM 250 SX-F",
+          "et": "KTM 250 SX-F",
+          "ru": "KTM 250 SX-F"
+        },
+        "year": "2025",
+        "category": "wraps",
+        "details": {
+          "en": "Full plastics wrap · matte laminate",
+          "et": "Plastikute täiskiletus · matt laminaat",
+          "ru": "Полная оклейка пластика · матовый ламинат"
+        },
+        "gallery": [
+          {
+            "image": "/images/uploads/gate-drop.jpg",
+            "alt": {
+              "en": "Gate Drop — KTM 250 SX-F",
+              "et": "Gate Drop — KTM 250 SX-F",
+              "ru": "Gate Drop — KTM 250 SX-F"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Airborne",
+        "subtitle": {
+          "en": "Husqvarna FC 350",
+          "et": "Husqvarna FC 350",
+          "ru": "Husqvarna FC 350"
+        },
+        "year": "2025",
+        "category": "graphics",
+        "details": {
+          "en": "Race kit · number plates · 21 mil vinyl",
+          "et": "Võistluskomplekt · numbrilauad · 21 mil vinüül",
+          "ru": "Гоночный комплект · номерные таблички · винил 21 mil"
+        },
+        "gallery": [
+          {
+            "image": "/images/uploads/airborne.jpg",
+            "alt": {
+              "en": "Airborne — Husqvarna FC 350",
+              "et": "Airborne — Husqvarna FC 350",
+              "ru": "Airborne — Husqvarna FC 350"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Satin Split",
+        "subtitle": {
+          "en": "Audi RS",
+          "et": "Audi RS",
+          "ru": "Audi RS"
+        },
+        "year": "2024",
+        "category": "wraps",
+        "details": {
+          "en": "Colour change wrap · satin grey",
+          "et": "Värvivahetuskile · satiinhall",
+          "ru": "Смена цвета · сатиновый серый"
+        },
+        "gallery": [
+          {
+            "image": "/images/uploads/satin-split.jpg",
+            "alt": {
+              "en": "Satin Split — Audi RS",
+              "et": "Satin Split — Audi RS",
+              "ru": "Satin Split — Audi RS"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Cut Sheet",
+        "subtitle": {
+          "en": "Printed decal set",
+          "et": "Trükitud kleebisekomplekt",
+          "ru": "Набор печатных наклеек"
+        },
+        "year": "2025",
+        "category": "print",
+        "details": {
+          "en": "Latex print · contour cut · laminated",
+          "et": "Latekstrükk · kontuurlõige · lamineeritud",
+          "ru": "Латексная печать · контурная резка · ламинировано"
+        },
+        "gallery": [
+          {
+            "image": "/images/uploads/cut-sheet.jpg",
+            "alt": {
+              "en": "Cut Sheet — printed decal set",
+              "et": "Cut Sheet — trükitud kleebisekomplekt",
+              "ru": "Cut Sheet — набор печатных наклеек"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Team Kit",
+        "subtitle": {
+          "en": "Jersey & helmet graphics",
+          "et": "Särgi- ja kiivrigraafika",
+          "ru": "Графика для джерси и шлема"
+        },
+        "year": "2024",
+        "category": "graphics",
+        "details": {
+          "en": "Apparel print · heat transfer",
+          "et": "Rõivatrükk · termosiire",
+          "ru": "Печать на одежде · термотрансфер"
+        },
+        "gallery": [
+          {
+            "image": "/images/uploads/team-kit.jpg",
+            "alt": {
+              "en": "Team Kit — jersey & helmet graphics",
+              "et": "Team Kit — särgi- ja kiivrigraafika",
+              "ru": "Team Kit — графика для джерси и шлема"
+            }
+          }
+        ]
+      },
+      {
+        "title": "Fleet Lines",
+        "subtitle": {
+          "en": "Sprinter · commercial",
+          "et": "Sprinter · kommertssõiduk",
+          "ru": "Sprinter · коммерческий"
+        },
+        "year": "2024",
+        "category": "wraps",
+        "details": {
+          "en": "Partial wrap · fleet livery",
+          "et": "Osaline kiletus · autopargi kujundus",
+          "ru": "Частичная оклейка · ливрея автопарка"
+        },
+        "gallery": [
+          {
+            "image": "/images/uploads/fleet-lines.jpg",
+            "alt": {
+              "en": "Fleet Lines — Sprinter commercial van",
+              "et": "Fleet Lines — Sprinter kaubik",
+              "ru": "Fleet Lines — коммерческий фургон Sprinter"
+            }
+          }
+        ]
+      }
+    ],
     "closeLabel": "Sulge galerii",
-    "showSection": true
+    "previousLabel": "Eelmine pilt"
   },
   "ru": {
-    "label": "Избранные работы",
-    "headline": "Оклейка, комплекты\nи печатные детали",
-    "allLabel": "Все работы",
-    "galleryLabel": "Галерея проекта",
-    "openGalleryLabel": "Открыть галерею",
-    "previousLabel": "Предыдущее фото",
     "nextLabel": "Следующее фото",
+    "galleryLabel": "Галерея проекта",
+    "showSection": true,
+    "openGalleryLabel": "Открыть галерею",
+    "allLabel": "Все работы",
+    "headline": "Оклейка, комплекты\nи печатные детали",
+    "label": "Избранные работы",
     "closeLabel": "Закрыть галерею",
-    "showSection": true
+    "previousLabel": "Предыдущее фото"
   }
 }
