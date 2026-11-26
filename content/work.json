@@ -163,7 +163,7 @@
       {
         "id": "wraps",
         "name": {
-          "en": "Wraps",
+          "en": "Livery design",
           "et": "Kiled",
           "ru": "Оклейка"
         }
@@ -182,6 +182,14 @@
           "en": "Helmets",
           "et": "Trükk ja kleebised",
           "ru": "Печать и наклейки"
+        }
+      },
+      {
+        "id": "fleet",
+        "name": {
+          "en": "Fleet livery",
+          "et": "Transpordivahendid",
+          "ru": "Средства транспорта"
         }
       }
     ],
