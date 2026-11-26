@@ -171,15 +171,15 @@
       {
         "id": "graphics",
         "name": {
-          "en": "Race graphics",
+          "en": "MX graphics",
           "et": "Võistlusgraafika",
           "ru": "Гоночная графика"
         }
       },
       {
-        "id": "print",
+        "id": "helmets",
         "name": {
-          "en": "Print & decals",
+          "en": "Helmets",
           "et": "Trükk ja kleebised",
           "ru": "Печать и наклейки"
         }
