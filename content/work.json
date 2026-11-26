@@ -103,152 +103,49 @@
     "label": "Valitud tööd",
     "projects": [
       {
-        "title": "Gate Drop",
+        "title": "R. Virves Skoda Rally2 Livery",
         "subtitle": {
-          "en": "KTM 250 SX-F",
-          "et": "KTM 250 SX-F",
-          "ru": "KTM 250 SX-F"
+          "en": "",
+          "et": "",
+          "ru": ""
         },
         "year": "2025",
         "category": "wraps",
         "details": {
-          "en": "Full plastics wrap · matte laminate",
-          "et": "Plastikute täiskiletus · matt laminaat",
-          "ru": "Полная оклейка пластика · матовый ламинат"
+          "en": "",
+          "et": "",
+          "ru": ""
         },
         "gallery": [
           {
-            "image": "/images/uploads/gate-drop.jpg",
+            "image": "/images/uploads/fabia_virves_01chrome.jpg",
             "alt": {
-              "en": "Gate Drop — KTM 250 SX-F",
-              "et": "Gate Drop — KTM 250 SX-F",
-              "ru": "Gate Drop — KTM 250 SX-F"
+              "en": "",
+              "et": "",
+              "ru": ""
             }
+          },
+          {
+            "image": "/images/uploads/fabia_virves_02chrome.jpg"
+          },
+          {
+            "image": "/images/uploads/fabia_virves_03chrome.jpg"
           }
         ]
       },
       {
-        "title": "Airborne",
-        "subtitle": {
-          "en": "Husqvarna FC 350",
-          "et": "Husqvarna FC 350",
-          "ru": "Husqvarna FC 350"
-        },
-        "year": "2025",
-        "category": "graphics",
-        "details": {
-          "en": "Race kit · number plates · 21 mil vinyl",
-          "et": "Võistluskomplekt · numbrilauad · 21 mil vinüül",
-          "ru": "Гоночный комплект · номерные таблички · винил 21 mil"
-        },
-        "gallery": [
-          {
-            "image": "/images/uploads/airborne.jpg",
-            "alt": {
-              "en": "Airborne — Husqvarna FC 350",
-              "et": "Airborne — Husqvarna FC 350",
-              "ru": "Airborne — Husqvarna FC 350"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Satin Split",
-        "subtitle": {
-          "en": "Audi RS",
-          "et": "Audi RS",
-          "ru": "Audi RS"
-        },
-        "year": "2024",
+        "title": "J.R.Nõgene Toyota Rally2 Livery",
+        "year": "2026",
         "category": "wraps",
-        "details": {
-          "en": "Colour change wrap · satin grey",
-          "et": "Värvivahetuskile · satiinhall",
-          "ru": "Смена цвета · сатиновый серый"
-        },
         "gallery": [
           {
-            "image": "/images/uploads/satin-split.jpg",
-            "alt": {
-              "en": "Satin Split — Audi RS",
-              "et": "Satin Split — Audi RS",
-              "ru": "Satin Split — Audi RS"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Cut Sheet",
-        "subtitle": {
-          "en": "Printed decal set",
-          "et": "Trükitud kleebisekomplekt",
-          "ru": "Набор печатных наклеек"
-        },
-        "year": "2025",
-        "category": "print",
-        "details": {
-          "en": "Latex print · contour cut · laminated",
-          "et": "Latekstrükk · kontuurlõige · lamineeritud",
-          "ru": "Латексная печать · контурная резка · ламинировано"
-        },
-        "gallery": [
+            "image": "/images/uploads/yaris_nogene_0.jpg"
+          },
           {
-            "image": "/images/uploads/cut-sheet.jpg",
-            "alt": {
-              "en": "Cut Sheet — printed decal set",
-              "et": "Cut Sheet — trükitud kleebisekomplekt",
-              "ru": "Cut Sheet — набор печатных наклеек"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Team Kit",
-        "subtitle": {
-          "en": "Jersey & helmet graphics",
-          "et": "Särgi- ja kiivrigraafika",
-          "ru": "Графика для джерси и шлема"
-        },
-        "year": "2024",
-        "category": "graphics",
-        "details": {
-          "en": "Apparel print · heat transfer",
-          "et": "Rõivatrükk · termosiire",
-          "ru": "Печать на одежде · термотрансфер"
-        },
-        "gallery": [
+            "image": "/images/uploads/yaris_nogene_3.jpg"
+          },
           {
-            "image": "/images/uploads/team-kit.jpg",
-            "alt": {
-              "en": "Team Kit — jersey & helmet graphics",
-              "et": "Team Kit — särgi- ja kiivrigraafika",
-              "ru": "Team Kit — графика для джерси и шлема"
-            }
-          }
-        ]
-      },
-      {
-        "title": "Fleet Lines",
-        "subtitle": {
-          "en": "Sprinter · commercial",
-          "et": "Sprinter · kommertssõiduk",
-          "ru": "Sprinter · коммерческий"
-        },
-        "year": "2024",
-        "category": "wraps",
-        "details": {
-          "en": "Partial wrap · fleet livery",
-          "et": "Osaline kiletus · autopargi kujundus",
-          "ru": "Частичная оклейка · ливрея автопарка"
-        },
-        "gallery": [
-          {
-            "image": "/images/uploads/fleet-lines.jpg",
-            "alt": {
-              "en": "Fleet Lines — Sprinter commercial van",
-              "et": "Fleet Lines — Sprinter kaubik",
-              "ru": "Fleet Lines — коммерческий фургон Sprinter"
-            }
+            "image": "/images/uploads/yaris_nogene_1.jpg"
           }
         ]
       }
