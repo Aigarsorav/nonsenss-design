@@ -26,10 +26,16 @@
           {
             "image": "/images/uploads/fabia_virves_01chrome.jpg",
             "alt": {
-              "en": "Gate Drop — KTM 250 SX-F",
-              "et": "Gate Drop — KTM 250 SX-F",
-              "ru": "Gate Drop — KTM 250 SX-F"
+              "en": "",
+              "et": "",
+              "ru": ""
             }
+          },
+          {
+            "image": "/images/uploads/fabia_virves_02chrome.jpg"
+          },
+          {
+            "image": "/images/uploads/fabia_virves_03chrome.jpg"
           }
         ]
       },
